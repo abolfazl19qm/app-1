@@ -1,5 +1,6 @@
 import {Section} from "@/app/Section";
 import {SectionProduct} from "@/app/SectionProduct";
+import {SectionEvent} from "@/app/SectionEvent";
 
 const Section1 = {
     textColor: "text-[#CA8F65]",
@@ -21,11 +22,36 @@ const Section2 = {
     imageCenter: ""
 
 }
+const Section3 = {
+    title : " ساختگی با تولید سادگی نامفهوم تولید ",
+    eventTitle: "پیشنهاد در تاریخ منقضی می شود :",
+    btnText: "خرید",
+    btnColor: "bg-[#CA8F65]",
+    image: ""
+
+}
 export default function Home() {
     return (
         <div className={"bg-zinc-800"}>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <Section {...Section1} />
             <SectionProduct {...Section2} />
+            <SectionEvent {...Section3}/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
     </div>
     )
 }
