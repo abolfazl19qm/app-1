@@ -1,6 +1,7 @@
-import {Section} from "@/app/Section";
+import {SectionLogo} from "@/app/SectionLogo";
 import {SectionProduct} from "@/app/SectionProduct";
 import {SectionEvent} from "@/app/SectionEvent";
+
 
 const Section1 = {
     textColor: "text-[#CA8F65]",
@@ -23,11 +24,15 @@ const Section2 = {
 
 }
 const Section3 = {
-    title : " ساختگی با تولید سادگی نامفهوم تولید ",
+    title: " ساختگی با تولید سادگی نامفهوم تولید ",
     eventTitle: "پیشنهاد در تاریخ منقضی می شود :",
     btnText: "خرید",
     btnColor: "bg-[#CA8F65]",
-    image: ""
+    image: "",
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 10
 
 }
 export default function Home() {
@@ -41,7 +46,7 @@ export default function Home() {
             <br/>
             <br/>
             <br/>
-            <Section {...Section1} />
+            <SectionLogo {...Section1} />
             <SectionProduct {...Section2} />
             <SectionEvent {...Section3}/>
             <br/>
@@ -52,6 +57,6 @@ export default function Home() {
             <br/>
             <br/>
             <br/>
-    </div>
+        </div>
     )
 }
