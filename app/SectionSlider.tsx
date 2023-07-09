@@ -1,14 +1,28 @@
 "use client"
-import { Swiper } from 'swiper/react';
-export const SectionSlider = ({}) => {
+import {Swiper} from 'swiper/react';
+import {VFC} from "react";
+interface ISection {
+
+}
+interface ISection {
+    title: string
+    volume: string
+    description: string
+    btnText: string
+    price: string
+    img: string
+}
+export const SectionSlider: VFC<ISection> = ({img, title, volume, btnText, description, price }) => {
     return (
         <section dir={"rtl"} className={"w-[90%] grid mt-96 grid-cols-9 grid-rows-[9] md:grid-rows-1  mx-auto gap-5 "}>
 
             <div className={"w-full md:col-span-4 col-span-9 row-span-3 md:row-span-1  md:h-full"}>
-                <ProductTitle/>
+                <ProductTitle title={title} volume={volume} description={description} price={price} btnText={btnText}/>
             </div>
             <div className={"w-full md:col-span-4 col-span-9 row-span-5 md:row-span-1  md:h-full"}>
-                <img className={"md:w-[80%] mx-auto h-3/5 md:h-full xl:h-[90%]"} src="https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-slider-pic7.webp" alt=""/>
+                <img className={"md:w-[80%] mt-10 mx-auto h-3/5 md:h-full xl:h-[90%]"}
+                     src={img}
+                     alt="DRINK"/>
                 {/*<div className={"w-full h10  md:hidden "}>
                     <ul className={"flex justify-evenly"}>
                         <li className={"w-4 h-4 rounded-full  border-[2px] border-[#CA8F65]"}><button className={"w-full h-full"}></button></li>
@@ -28,13 +42,28 @@ export const SectionSlider = ({}) => {
     )
 }
 
-const ProductTitle = () => {
+interface Product {
+    title: string
+    volume: string
+    description: string
+    btnText: string
+    price: string
+
+
+}
+
+const ProductTitle: VFC<Product>  = ({title, volume, btnText, description, price}) => {
     return (
-        <div className={"w-[80%]  xl:w-[55%] md:mt-10 xl:mt-20 mx-auto"}>
-            <h2>ثخبتث ختبخث</h2>
-            <p>1000ML|IR</p>
-            <p >هثبثهابهثابهاث هثابهثب هابهثاب ثه</p>
-            <div className={"flex  justify-between"}><p>400,000 تومان</p><button>خرید</button></div>
+        <div dir={"rtl"} className={"w-[80%]  xl:w-[55%] md:mt-10 xl:mt-20 mx-auto"}>
+            <h2 className={"text-center md:text-right text-5xl text-[#CA8F65]"}>{title}</h2>
+            <p className={"text-center md:text-right mt-10 text-orange-100"}>{volume}</p>
+            <p className={"text-center md:text-right text-zinc-400 font-medium mt-10 hidden md:block"}>{description}</p>
+            <div className={"flex items-center mt-10 justify-between"}><p
+                className={"text-[#CA8F65] font-medium"}>{price}</p>
+                <button
+                    className={"text-[#CA8F65] transition-all duration-300 w-28 h-12 border-2 md:hover:border-orange-100 md:hover:text-orange-100 border-[#CA8F65]"}>{btnText}
+                </button>
+            </div>
         </div>
     )
 }
