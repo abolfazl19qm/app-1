@@ -1,6 +1,8 @@
 import {SectionLogo} from "@/app/SectionLogo";
 import {SectionProduct} from "@/app/SectionProduct";
 import {SectionEvent} from "@/app/SectionEvent";
+import {SectionSlider} from "@/app/SectionSlider";
+import App from "@/app/None";
 
 
 const Section1 = {
@@ -32,7 +34,7 @@ const Section3 = {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 10
+    seconds: 0
 
 }
 export default function Home() {
@@ -49,6 +51,7 @@ export default function Home() {
             <SectionLogo {...Section1} />
             <SectionProduct {...Section2} />
             <SectionEvent {...Section3}/>
+            <App/>
             <br/>
             <br/>
             <br/>
