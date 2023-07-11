@@ -25,12 +25,15 @@ export const SectionEvent: VFC<ISection> = ({
                                                 minutes,
                                                 seconds
                                             }) => {
+    // Hook for time(D-H-M-S)
     const [time, setTime] = useState({days, hours, minutes, seconds});
+    // Hook for hide Section
     const [display, setDisplay] = useState("hidden");
 
     useEffect(() => {
         let interval = setInterval(() => {
             setDisplay("");
+            // Condition for Hide section
             if (time.days === 0 && time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
                 clearInterval(interval);
                 setDisplay("hidden");
@@ -68,7 +71,6 @@ export const SectionEvent: VFC<ISection> = ({
 
         return () => clearInterval(interval);
     }, [time]);
-
     return (
         <section
             className={`w-[90%] ${display} md:p-10 overflow-hidden mt-[400px] relative   md:mt-5 lg:w-[75%] mx-auto h-[900px] md:h-[625px] border-[#CA8F65]  bg-[#2A2A2A] border-2`}>

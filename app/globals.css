@@ -2,23 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.group {
-    position: relative;
-}
-
-.group::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #CA8F65;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-}
-
-.group:hover::after {
-    transform: scaleX(1);
-}

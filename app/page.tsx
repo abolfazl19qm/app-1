@@ -1,7 +1,9 @@
 import {SectionLogo} from "@/app/SectionLogo";
-import {SectionProduct} from "@/app/SectionProduct";
+import {SectionServices} from "@/app/SectionServices";
 import {SectionEvent} from "@/app/SectionEvent";
 import {SectionSlider} from "@/app/SectionSlider";
+import {TextWithImage2} from "@/app/TextWithImage2";
+import {SettingsTextWithImage2} from "@/app/TextWithImage2/setting";
 
 
 const sectionLogo = {
@@ -70,7 +72,7 @@ export default function Home() {
             <br/>
             <SectionLogo {...sectionLogo} />
             <SectionSlider {...sectionSlider} />
-            <SectionProduct {...sectionProduct} />
+            <SectionServices {...sectionProduct} />
             <SectionEvent {...sectionEvent}/>
             <br/>
             <br/>

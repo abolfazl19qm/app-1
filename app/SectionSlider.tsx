@@ -3,6 +3,8 @@ import {VFC} from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {useEffect, useRef, useState} from "react";
 import 'swiper/css';
+import {EffectFade} from "swiper/modules";
+import 'swiper/css/effect-fade';
 
 interface ISlider {
     img1: string
@@ -61,92 +63,116 @@ export const SectionSlider: VFC<ISlider> = ({
                                             }) => {
     const swiperRef: any = useRef();
     const [btnColor, setBtnColor] = useState({
-        btn1: "text-zinc-400",
-        btn2: "text-zinc-400",
-        btn3: "text-zinc-400",
-        btn4: "text-zinc-400",
+        btn1: "text-zinc-400 opacity-20 ",
+        btn2: "text-zinc-400 opacity-20 ",
+        btn3: "text-zinc-400 opacity-20 ",
+        btn4: "text-zinc-400 opacity-20 ",
+        slide1: "",
+        slide2: "",
+        slide3: "",
+        slide4: ""
     })
     const btn1 = () => {
         swiperRef.current.slideTo(0);
         setBtnColor({
-            btn1: "text-[#CA8F65]",
-            btn2: "text-zinc-400",
-            btn3: "text-zinc-400",
-            btn4: "text-zinc-400",
+            btn1: "text-[#CA8F65]  scale-125 opacity-100",
+            btn2: "text-zinc-400 opacity-20",
+            btn3: "text-zinc-400 opacity-20",
+            btn4: "text-zinc-400 opacity-20",
+            slide1: "scale-100 opacity-100",
+            slide2: "scale-50 opacity-20",
+            slide3: "scale-50 opacity-20",
+            slide4: "scale-50 opacity-20"
         });
     }
     const btn2 = () => {
         swiperRef.current.slideTo(1);
         setBtnColor({
-            btn1: "text-zinc-400",
-            btn2: "text-[#CA8F65]",
-            btn3: "text-zinc-400",
-            btn4: "text-zinc-400",
+            btn1: "text-zinc-400 opacity-20",
+            btn2: "text-[#CA8F65] scale-125  opacity-100",
+            btn3: "text-zinc-400 opacity-20",
+            btn4: "text-zinc-400 opacity-20",
+            slide1: "scale-50 opacity-20",
+            slide2: "scale-100 opacity-100",
+            slide3: "scale-50 opacity-20",
+            slide4: "scale-50 opacity-20"
         });
     }
     const btn3 = () => {
         swiperRef.current.slideTo(2);
         setBtnColor({
-            btn1: "text-zinc-400",
-            btn2: "text-zinc-400",
+            btn1: "text-zinc-400 opacity-20",
+            btn2: "text-zinc-400 opacity-20",
             btn3: "text-[#CA8F65]",
-            btn4: "text-zinc-400",
+            btn4: "text-zinc-400 opacity-20",
+            slide1: "scale-50 opacity-20",
+            slide2: "scale-50 opacity-20",
+            slide3: "scale-100 opacity-100",
+            slide4: "scale-50 opacity-20"
         });
     }
     const btn4 = () => {
         swiperRef.current.slideTo(3);
         setBtnColor({
-            btn1: "text-zinc-400",
-            btn2: "text-zinc-400",
-            btn3: "text-zinc-400",
-            btn4: "text-[#CA8F65]",
+            btn1: "text-zinc-400 opacity-20",
+            btn2: "text-zinc-400 opacity-20",
+            btn3: "text-zinc-400 opacity-20",
+            btn4: "text-[#CA8F65] scale-125 opacity-100",
+            slide1: "scale-50 opacity-20",
+            slide2: "scale-50 opacity-20",
+            slide3: "scale-50 opacity-20",
+            slide4: "scale-100 opacity-100"
         });
     }
 
     useEffect(() => {
         async function Run(list: Function[]) {
-
             const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
             while (true) {
                 for (const item of list) {
+                    // call buttons Function in loop
                     item();
+                    // delay -6-second
                     await delay(6000);
                 }
             }
         }
-
+        // run function for call Function in loop
         Run([btn1, btn2, btn3, btn4]);
     }, []);
     return (
-        <div className={"relative mt-5 md:mt-0"}>
+        <div className={"relative  mt-5 md:mt-0"}>
             <Swiper
+                modules={[EffectFade]}
+                fadeEffect={{crossFade: true}}
+                effect={"fade"}
                 slidesPerView={1}
-                loop={true}
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
+                navigation={false}
             >
                 <SwiperSlide>
-                    <div><Slide title={title1} img={img1} btnText={btnText1} price={price1} description={description1}
+                    <div className={` ${btnColor.slide1} transition-all duration-1000`}><Slide title={title1} img={img1} btnText={btnText1} price={price1} description={description1}
                                 volume={volume1}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div><Slide title={title2} img={img2} btnText={btnText2} price={price2} description={description2}
+                    <div className={` ${btnColor.slide2} transition-all duration-1000`}><Slide title={title2} img={img2} btnText={btnText2} price={price2} description={description2}
                                 volume={volume2}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div><Slide title={title3} img={img3} btnText={btnText3} price={price3} description={description3}
+                    <div className={` ${btnColor.slide3} transition-all duration-1000`}><Slide title={title3} img={img3} btnText={btnText3} price={price3} description={description3}
                                 volume={volume3}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div><Slide title={title4} img={img4} btnText={btnText4} price={price4} description={description4}
+                    <div className={` ${btnColor.slide4} transition-all duration-1000`}><Slide title={title4} img={img4} btnText={btnText4} price={price4} description={description4}
                                 volume={volume4}/></div>
                 </SwiperSlide>
 
             </Swiper>
             <div
-                className={" md:left-5 md:w-10 h-[40%] lg:top-44 md:top-28  md:z-10  md:absolute z-20   md:flex-col   justify-evenly flex"}>
+                className={" md:left-5 md:w-10 h-[40%]  lg:top-44 md:top-28  md:z-10  md:absolute z-20   md:flex-col   justify-evenly flex"}>
 
 
                 <button onClick={() => {
@@ -205,7 +231,7 @@ const Slide: VFC<ISlide> = ({img, title, volume, btnText, description, price}) =
             </div>
             <div className={"md:col-span-1 col-span-9 hidden lg:block row-span-5 md:row-span-1"}></div>
             <div className={"w-full md:col-span-4 col-span-9 row-span-5 md:row-span-1  md:h-full"}>
-                <img className={"md:w-[80%] xl:w-full mt-10 mx-auto h-96 md:h-96 xl:h-[650px]"}
+                <img className={"md:w-[80%] lg:w-[70%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]"}
                      src={img}
                      alt="DRINK"/>
             </div>
