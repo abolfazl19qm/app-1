@@ -28,7 +28,7 @@ export const SectionServices: VFC<ISection2> = ({
                                                }) => {
     return (
         <section className={"flex items-center h-full flex-col"}>
-            <img className={"w-[90%]"} src={imageCenter ? imageCenter : "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-home-pic3.webp"}/>
+            <img className={"w-[90%]"} alt={"Shipping in 24 hours"} src={imageCenter ? imageCenter : "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-home-pic3.webp"}/>
             <div dir="rtl" className={"w-8/12 mt-5 gap-x-5  gap-y-10  h-56 grid grid-cols-3"}>
                 <div className={" col-span-3  md:col-span-1"}>
                     <div

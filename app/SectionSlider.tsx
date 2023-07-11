@@ -70,7 +70,11 @@ export const SectionSlider: VFC<ISlider> = ({
         slide1: "",
         slide2: "",
         slide3: "",
-        slide4: ""
+        slide4: "",
+        slide5: "",
+        slide6: "",
+        slide7: "",
+        slide8: ""
     })
     const btn1 = () => {
         swiperRef.current.slideTo(0);
@@ -79,10 +83,14 @@ export const SectionSlider: VFC<ISlider> = ({
             btn2: "text-zinc-400 opacity-20",
             btn3: "text-zinc-400 opacity-20",
             btn4: "text-zinc-400 opacity-20",
-            slide1: "scale-100 opacity-100",
-            slide2: "scale-50 opacity-20",
-            slide3: "scale-50 opacity-20",
-            slide4: "scale-50 opacity-20"
+            slide1: "scale-100 lg:mr-10 opacity-100",
+            slide2: "scale-75 lg:-mr-20 opacity-0",
+            slide3: "scale-75 lg:-mr-20 opacity-0",
+            slide4: "scale-75 lg:-mr-20 opacity-0",
+            slide5: "scale-100 lg:ml-10 opacity-100",
+            slide6: "scale-75 lg:-ml-20 opacity-0",
+            slide7: "scale-75 lg:-ml-20 opacity-0",
+            slide8: "scale-75 lg:-ml-20 opacity-0"
         });
     }
     const btn2 = () => {
@@ -92,10 +100,14 @@ export const SectionSlider: VFC<ISlider> = ({
             btn2: "text-[#CA8F65] scale-125  opacity-100",
             btn3: "text-zinc-400 opacity-20",
             btn4: "text-zinc-400 opacity-20",
-            slide1: "scale-50 opacity-20",
-            slide2: "scale-100 opacity-100",
-            slide3: "scale-50 opacity-20",
-            slide4: "scale-50 opacity-20"
+            slide1: "scale-75 lg:-mr-20 opacity-0",
+            slide2: "scale-100 opacity-100 lg:mr-10",
+            slide3: "scale-75 lg:-mr-20 opacity-0",
+            slide4: "scale-75 lg:-mr-20 opacity-0",
+            slide5: "scale-75 lg:-ml-20 opacity-0",
+            slide6: "scale-100 opacity-100 lg:ml-10",
+            slide7: "scale-75 lg:-ml-20 opacity-0",
+            slide8: "scale-75 lg:-ml-20 opacity-0"
         });
     }
     const btn3 = () => {
@@ -105,10 +117,14 @@ export const SectionSlider: VFC<ISlider> = ({
             btn2: "text-zinc-400 opacity-20",
             btn3: "text-[#CA8F65]",
             btn4: "text-zinc-400 opacity-20",
-            slide1: "scale-50 opacity-20",
-            slide2: "scale-50 opacity-20",
-            slide3: "scale-100 opacity-100",
-            slide4: "scale-50 opacity-20"
+            slide1: "scale-75 lg:-mr-20 opacity-0",
+            slide2: "scale-75 lg:-mr-20 opacity-0",
+            slide3: "scale-100 lg:mr-10 opacity-100",
+            slide4: "scale-75 lg:-mr-20 opacity-0",
+            slide5: "scale-75 lg:-ml-20 opacity-0",
+            slide6: "scale-75 lg:-ml-20 opacity-0",
+            slide7: "scale-100 lg:ml-10 opacity-100",
+            slide8: "scale-75 lg:-ml-20 opacity-0"
         });
     }
     const btn4 = () => {
@@ -118,10 +134,15 @@ export const SectionSlider: VFC<ISlider> = ({
             btn2: "text-zinc-400 opacity-20",
             btn3: "text-zinc-400 opacity-20",
             btn4: "text-[#CA8F65] scale-125 opacity-100",
-            slide1: "scale-50 opacity-20",
-            slide2: "scale-50 opacity-20",
-            slide3: "scale-50 opacity-20",
-            slide4: "scale-100 opacity-100"
+            slide1: "scale-75 lg:-mr-20 opacity-0",
+            slide2: "scale-75 lg:-mr-20 opacity-0",
+            slide3: "scale-75 lg:-mr-20 opacity-0",
+            slide4: "scale-100 lg:mr-10 opacity-100",
+            slide5: "scale-75 lg:-ml-20 opacity-0",
+            slide6: "scale-75 lg:-ml-20 opacity-0",
+            slide7: "scale-75 lg:-ml-20 opacity-0",
+            slide8: "scale-100 lg:ml-10 opacity-100"
+
         });
     }
 
@@ -138,6 +159,7 @@ export const SectionSlider: VFC<ISlider> = ({
                 }
             }
         }
+
         // run function for call Function in loop
         Run([btn1, btn2, btn3, btn4]);
     }, []);
@@ -151,30 +173,47 @@ export const SectionSlider: VFC<ISlider> = ({
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
-                navigation={false}
-            >
+                navigation={false}>
                 <SwiperSlide>
-                    <div className={` ${btnColor.slide1} transition-all duration-1000`}><Slide title={title1} img={img1} btnText={btnText1} price={price1} description={description1}
-                                volume={volume1}/></div>
+                    <div><Slide title={title1} img={img1}
+                                btnText={btnText1}
+                                price={price1}
+                                description={description1}
+                                volume={volume1}
+                                slider={` ${btnColor.slide1} transition-all duration-[1.5s]`}
+                                slidel={` ${btnColor.slide5} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={` ${btnColor.slide2} transition-all duration-1000`}><Slide title={title2} img={img2} btnText={btnText2} price={price2} description={description2}
-                                volume={volume2}/></div>
+                    <div><Slide title={title2} img={img2}
+                                btnText={btnText2}
+                                price={price2}
+                                description={description2}
+                                volume={volume2}
+                                slider={` ${btnColor.slide2} transition-all duration-[1.5s]`}
+                                slidel={` ${btnColor.slide6} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={` ${btnColor.slide3} transition-all duration-1000`}><Slide title={title3} img={img3} btnText={btnText3} price={price3} description={description3}
-                                volume={volume3}/></div>
+                    <div><Slide title={title3} img={img3}
+                                btnText={btnText3}
+                                price={price3}
+                                description={description3}
+                                volume={volume3}
+                                slider={` ${btnColor.slide3} transition-all duration-[1.5s]`}
+                                slidel={` ${btnColor.slide7} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={` ${btnColor.slide4} transition-all duration-1000`}><Slide title={title4} img={img4} btnText={btnText4} price={price4} description={description4}
-                                volume={volume4}/></div>
+                    <div><Slide title={title4} img={img4}
+                                btnText={btnText4}
+                                price={price4}
+                                description={description4}
+                                volume={volume4}
+                                slider={` ${btnColor.slide4} transition-all duration-[1.5s]`}
+                                slidel={` ${btnColor.slide8} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
 
             </Swiper>
             <div
-                className={" md:left-5 md:w-10 h-[40%]  lg:top-44 md:top-28  md:z-10  md:absolute z-20   md:flex-col   justify-evenly flex"}>
-
-
+                className={" md:left-5  md:w-10 h-[40%]  lg:top-44 md:top-28  md:z-10  md:absolute z-20   md:flex-col   justify-evenly flex"}>
                 <button onClick={() => {
                     btn1()
                 }}
@@ -207,17 +246,17 @@ interface ISlide {
     btnText: string
     price: string
     img: string
+    slider: string
+    slidel: string
 }
 
-const Slide: VFC<ISlide> = ({img, title, volume, btnText, description, price}) => {
-
-
+const Slide: VFC<ISlide> = ({img, title, volume, btnText, description, price, slider, slidel}) => {
     return (
-        <section dir={"rtl"} className={"w-[90%] grid  grid-cols-9 grid-rows-[9] md:grid-rows-1  mx-auto gap-5 "}>
-
+        <section dir={"rtl"}
+                 className={"w-[96%] md:w-[94%] lg:w-[90%] grid   grid-cols-9 grid-rows-[9] md:grid-rows-1  mx-auto gap-5 "}>
             <div className={"w-full md:col-span-4 col-span-9 row-span-3 md:row-span-1  md:h-full"}>
-                <div dir={"rtl"} className={"w-[80%]  xl:w-[65%] md:mt-10 xl:mt-20 mx-auto"}>
-                    <h2 className={"text-center md:text-right text-5xl xl:text-7xl text-[#CA8F65]"}>{title}</h2>
+                <div dir={"rtl"} className={"w-[80%]   xl:w-[65%] md:mt-10 xl:mt-20 mx-auto" + slider}>
+                    <h2 className={"text-center md:text-right text-5xl xl:text-7xl text-orange-100"}>{title}</h2>
                     <p className={"text-center md:text-right mt-10 lg:mt-12 xl:mt-14 text-orange-100"}>{volume}</p>
                     <p className={"text-center md:text-right xl:text-xl text-zinc-400 font-medium mt-10 hidden md:block"}>{description}</p>
                     <div className={"flex items-center mt-10 lg:mt-16 justify-between"}><p
@@ -229,14 +268,15 @@ const Slide: VFC<ISlide> = ({img, title, volume, btnText, description, price}) =
                     </div>
                 </div>
             </div>
-            <div className={"md:col-span-1 col-span-9 hidden lg:block row-span-5 md:row-span-1"}></div>
+            <div className={"md:col-span-1 col-span-9 hidden md:block row-span-5 md:row-span-1"}></div>
             <div className={"w-full md:col-span-4 col-span-9 row-span-5 md:row-span-1  md:h-full"}>
-                <img className={"md:w-[80%] lg:w-[70%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]"}
+                <img className={"md:w-[85%] w-[70%] lg:w-[80%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]" + slidel}
                      src={img}
                      alt="DRINK"/>
             </div>
         </section>
     )
 }
+
 
 

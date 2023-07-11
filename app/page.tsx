@@ -2,8 +2,7 @@ import {SectionLogo} from "@/app/SectionLogo";
 import {SectionServices} from "@/app/SectionServices";
 import {SectionEvent} from "@/app/SectionEvent";
 import {SectionSlider} from "@/app/SectionSlider";
-import {TextWithImage2} from "@/app/TextWithImage2";
-import {SettingsTextWithImage2} from "@/app/TextWithImage2/setting";
+
 
 
 const sectionLogo = {
