@@ -10,10 +10,13 @@ export interface ISectionEvent {
     btnColor: string;
     image: string[];
     bgColor: string;
+    className?: string;
+    refContainer?: React.Ref<HTMLDivElement>;
     days: number;
     hours: number;
     minutes: number;
     seconds: number;
+
 }
 
 /**
@@ -32,6 +35,8 @@ export const SectionEvent: VFC<ISectionEvent> = ({
                                                      eventTitle = "",
                                                      btnText = "",
                                                      btnColor = "",
+                                                     className = "",
+                                                     refContainer,
                                                      days = 0,
                                                      hours = 0,
                                                      minutes = 0,
@@ -85,7 +90,8 @@ export const SectionEvent: VFC<ISectionEvent> = ({
     }, [time]);
     return (
         <section
-            className={`w-[90%] ${display} md:p-10 overflow-hidden mt-[400px] relative   md:mt-5 lg:w-[75%] mx-auto h-[900px] md:h-[625px] border-[#CA8F65]  bg-[#2A2A2A] border-2`}>
+            ref={refContainer}
+            className={className + ` w-[90%] ${display} md:p-10 overflow-hidden mt-[400px] relative   md:mt-5 lg:w-[75%] mx-auto h-[900px] md:h-[625px] border-[#CA8F65]  bg-[#2A2A2A] border-2`}>
             <div className={"absolute right-0  bottom-0"}><Image className={"w-96 md:w-[620px]"}
                                                                  src={image[0]}
                                                                  alt="Drink"/></div>

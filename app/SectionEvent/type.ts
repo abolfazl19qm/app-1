@@ -11,4 +11,8 @@ export interface SectionEventType {
     btnColor: colorPalette;
     bgColor: colorPalette;
     image: sidebarUploadImage;
+    days: sidebarTextInput;
+    hours: sidebarTextInput;
+    minutes: sidebarTextInput;
+    seconds: sidebarTextInput;
 }

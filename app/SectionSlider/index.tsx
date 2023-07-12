@@ -1,5 +1,5 @@
 "use client"
-import {VFC} from "react";
+import React, {VFC} from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {useEffect, useRef, useState} from "react";
 import 'swiper/css';
@@ -33,35 +33,51 @@ export interface ISectionSlider {
     descriptionColor: string;
     buttonColor: string;
     priceColor: string;
+    bgColor: string;
+    className?: string;
+    refContainer?: React.Ref<HTMLDivElement>;
 }
 
+/**
+ * Create a responsive section consisting of text at the left and Three images at the right.
+ * @param {string} title : The title of Services
+ * @param {string[]} price1 : The price
+ * @param {string} description1 : The description
+ * @param {string} bgColor : To change background color
+ * @param {string[]} img : images slide
+ * @return {JSX.Element}
+ * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
+ */
 export const SectionSlider: VFC<ISectionSlider> = ({
-                                                img = [],
-                                                title1 = "",
-                                                volume1 = "",
-                                                btnText1 = "",
-                                                description1 = "",
-                                                price1 = "",
-                                                title2 = "",
-                                                volume2 = "",
-                                                btnText2 = "",
-                                                description2 = "",
-                                                price2 = "",
-                                                title3 = "",
-                                                volume3 = "",
-                                                btnText3 = "",
-                                                description3 = "",
-                                                price3 = "",
-                                                title4 = "",
-                                                volume4 = "",
-                                                btnText4 = "",
-                                                description4 = "",
-                                                price4 = "",
-                                                buttonColor = "",
-                                                titleColor = "",
-                                                descriptionColor = "",
-                                                priceColor = ""
-                                            }) => {
+                                                       img = [],
+                                                       title1 = "",
+                                                       volume1 = "",
+                                                       btnText1 = "",
+                                                       description1 = "",
+                                                       price1 = "",
+                                                       title2 = "",
+                                                       volume2 = "",
+                                                       btnText2 = "",
+                                                       description2 = "",
+                                                       price2 = "",
+                                                       title3 = "",
+                                                       volume3 = "",
+                                                       btnText3 = "",
+                                                       description3 = "",
+                                                       price3 = "",
+                                                       title4 = "",
+                                                       volume4 = "",
+                                                       btnText4 = "",
+                                                       description4 = "",
+                                                       price4 = "",
+                                                       buttonColor = "",
+                                                       titleColor = "",
+                                                       descriptionColor = "",
+                                                       priceColor = "",
+                                                       bgColor = "",
+                                                       className = "",
+                                                       refContainer,
+                                                   }) => {
     const swiperRef: any = useRef();
     const [btnColor, setBtnColor] = useState({
         btn1: "text-zinc-400 opacity-20 ",
@@ -165,7 +181,7 @@ export const SectionSlider: VFC<ISectionSlider> = ({
         Run([btn1, btn2, btn3, btn4]);
     }, []);
     return (
-        <div className={"relative  mt-5 md:mt-0"}>
+        <div style={{background: bgColor}} ref={refContainer} className={"relative  mt-5 md:mt-0 " + className}>
             <Swiper
                 modules={[EffectFade]}
                 fadeEffect={{crossFade: true}}
@@ -313,8 +329,8 @@ const Slide: VFC<ISlide> = ({
             <div className={"md:col-span-1 col-span-9 hidden md:block row-span-5 md:row-span-1"}></div>
             <div className={"w-full md:col-span-4 col-span-9 row-span-5 md:row-span-1  md:h-full"}>
                 <Image className={"md:w-[85%] w-[70%] lg:w-[80%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]" + slidel}
-                     src={img}
-                     alt="DRINK"/>
+                       src={img}
+                       alt="DRINK"/>
             </div>
         </section>
     )
