@@ -2,6 +2,10 @@ import {SectionLogo} from "@/app/SectionLogo";
 import {SectionServices} from "@/app/SectionServices";
 import {SectionEvent} from "@/app/SectionEvent";
 import {SectionSlider} from "@/app/SectionSlider";
+import {Footer} from "@/app/footer";
+import {SectionInfo} from "@/app/SectionInfo";
+import {SectionComment} from "@/app/SectionComment";
+
 
 
 
@@ -66,13 +70,27 @@ const sectionSlider = {
 }
 export default function Home() {
     return (
-        <div className={"bg-zinc-800"}>
+        <div className={"bg-[#2a2a2a]"}>
             <br/>
             <br/>
             <SectionLogo {...sectionLogo} />
             <SectionSlider {...sectionSlider} />
             <SectionServices {...sectionProduct} />
             <SectionEvent {...sectionEvent}/>
+            <SectionInfo/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <SectionComment/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <Footer/>
             <br/>
             <br/>
             <br/>

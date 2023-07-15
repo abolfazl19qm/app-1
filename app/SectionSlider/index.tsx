@@ -79,7 +79,7 @@ export const SectionSlider: VFC<ISectionSlider> = ({
                                                        refContainer,
                                                    }) => {
     const swiperRef: any = useRef();
-    const [btnColor, setBtnColor] = useState({
+    const [slide, setSlide] = useState({
         btn1: "text-zinc-400 opacity-20 ",
         btn2: "text-zinc-400 opacity-20 ",
         btn3: "text-zinc-400 opacity-20 ",
@@ -95,7 +95,7 @@ export const SectionSlider: VFC<ISectionSlider> = ({
     })
     const btn1 = () => {
         swiperRef.current.slideTo(0);
-        setBtnColor({
+        setSlide({
             btn1: "text-[#CA8F65]  scale-125 opacity-100",
             btn2: "text-zinc-400 opacity-20",
             btn3: "text-zinc-400 opacity-20",
@@ -112,7 +112,7 @@ export const SectionSlider: VFC<ISectionSlider> = ({
     }
     const btn2 = () => {
         swiperRef.current.slideTo(1);
-        setBtnColor({
+        setSlide({
             btn1: "text-zinc-400 opacity-20",
             btn2: "text-[#CA8F65] scale-125  opacity-100",
             btn3: "text-zinc-400 opacity-20",
@@ -129,7 +129,7 @@ export const SectionSlider: VFC<ISectionSlider> = ({
     }
     const btn3 = () => {
         swiperRef.current.slideTo(2);
-        setBtnColor({
+        setSlide({
             btn1: "text-zinc-400 opacity-20",
             btn2: "text-zinc-400 opacity-20",
             btn3: "text-[#CA8F65]",
@@ -146,7 +146,7 @@ export const SectionSlider: VFC<ISectionSlider> = ({
     }
     const btn4 = () => {
         swiperRef.current.slideTo(3);
-        setBtnColor({
+        setSlide({
             btn1: "text-zinc-400 opacity-20",
             btn2: "text-zinc-400 opacity-20",
             btn3: "text-zinc-400 opacity-20",
@@ -164,22 +164,22 @@ export const SectionSlider: VFC<ISectionSlider> = ({
     }
 
     useEffect(() => {
-        async function Run(list: Function[]) {
+        async function run(list: Function[]) {
             const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
             while (true) {
                 for (const item of list) {
-                    // call buttons Function in loop
+                    // call buttons Function
                     item();
-                    // delay -6-second
+                    // delay 6 second
                     await delay(6000);
                 }
             }
         }
 
-        // run function for call Function in loop
-        Run([btn1, btn2, btn3, btn4]);
-    }, []);
+        // Run(list of function for call in loop with delay 6s)
+        run([btn1, btn2, btn3, btn4]);
+    }, [slide]);
     return (
         <div style={{background: bgColor}} ref={refContainer} className={"relative  mt-5 md:mt-0 " + className}>
             <Swiper
@@ -202,8 +202,8 @@ export const SectionSlider: VFC<ISectionSlider> = ({
                                 price={price1}
                                 description={description1}
                                 volume={volume1}
-                                slider={` ${btnColor.slide1} transition-all duration-[1.5s]`}
-                                slidel={` ${btnColor.slide5} transition-all duration-[1.5s]`}/></div>
+                                slider={` ${slide.slide1} transition-all duration-[1.5s]`}
+                                slidel={` ${slide.slide5} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div><Slide title={title2}
@@ -216,8 +216,8 @@ export const SectionSlider: VFC<ISectionSlider> = ({
                                 price={price2}
                                 description={description2}
                                 volume={volume2}
-                                slider={` ${btnColor.slide2} transition-all duration-[1.5s]`}
-                                slidel={` ${btnColor.slide6} transition-all duration-[1.5s]`}/></div>
+                                slider={` ${slide.slide2} transition-all duration-[1.5s]`}
+                                slidel={` ${slide.slide6} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div><Slide title={title3}
@@ -230,8 +230,8 @@ export const SectionSlider: VFC<ISectionSlider> = ({
                                 price={price3}
                                 description={description3}
                                 volume={volume3}
-                                slider={` ${btnColor.slide3} transition-all duration-[1.5s]`}
-                                slidel={` ${btnColor.slide7} transition-all duration-[1.5s]`}/></div>
+                                slider={` ${slide.slide3} transition-all duration-[1.5s]`}
+                                slidel={` ${slide.slide7} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div><Slide title={title4}
@@ -244,8 +244,8 @@ export const SectionSlider: VFC<ISectionSlider> = ({
                                 price={price4}
                                 description={description4}
                                 volume={volume4}
-                                slider={` ${btnColor.slide4} transition-all duration-[1.5s]`}
-                                slidel={` ${btnColor.slide8} transition-all duration-[1.5s]`}/></div>
+                                slider={` ${slide.slide4} transition-all duration-[1.5s]`}
+                                slidel={` ${slide.slide8} transition-all duration-[1.5s]`}/></div>
                 </SwiperSlide>
 
             </Swiper>
@@ -254,22 +254,22 @@ export const SectionSlider: VFC<ISectionSlider> = ({
                 <button onClick={() => {
                     btn1()
                 }}
-                        className={`${btnColor.btn1} transition-all duration-500 hover:text-orange-400 mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>01
+                        className={`${slide.btn1} transition-all duration-500 hover:text-orange-400 mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>01
                 </button>
                 <button onClick={() => {
                     btn2()
                 }}
-                        className={`${btnColor.btn2} transition-all duration-500 hover:text-orange-400 mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>02
+                        className={`${slide.btn2} transition-all duration-500 hover:text-orange-400 mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>02
                 </button>
                 <button onClick={() => {
                     btn3()
                 }}
-                        className={`${btnColor.btn3} transition-all duration-500 hover:text-orange-400  mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>03
+                        className={`${slide.btn3} transition-all duration-500 hover:text-orange-400  mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>03
                 </button>
                 <button onClick={() => {
                     btn4()
                 }}
-                        className={`${btnColor.btn4} transition-all duration-500 hover:text-orange-400  mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>04
+                        className={`${slide.btn4} transition-all duration-500 hover:text-orange-400  mx-auto  md:w-3/6 md:h-full w-8 rounded-full h-8 bg-zinc-500 md:bg-transparent text-xl`}>04
                 </button>
             </div>
         </div>
@@ -328,7 +328,7 @@ const Slide: VFC<ISlide> = ({
             </div>
             <div className={"md:col-span-1 col-span-9 hidden md:block row-span-5 md:row-span-1"}></div>
             <div className={"w-full md:col-span-4 col-span-9 row-span-5 md:row-span-1  md:h-full"}>
-                <Image className={"md:w-[85%] w-[70%] lg:w-[80%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]" + slidel}
+                <Image className={"w-[85%] sm:[70%] md:w-[85%]  lg:w-[80%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]" + slidel}
                        src={img}
                        alt="DRINK"/>
             </div>

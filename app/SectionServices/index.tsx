@@ -19,19 +19,17 @@ export interface ISectionServices {
     descriptionColor: string;
     className?: string;
     refContainer?: React.Ref<HTMLDivElement>;
-    /**
-     * Create a responsive section consisting of text at the left and Three images at the right.
-     * @param {string} title : The title of Services
-     * @param {string[]} icon1 : The icons
-     * @param {string} description1 : The description
-     * @param {string} description2 : The description
-     * @param {string} description3 : The description
-     * @param {string} bgColor : To change background color
-     * @param {string[]} imageCenter : Three images that display on the right side of the component
-     * @return {JSX.Element}
-     * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
-     */
 }
+/**
+ * Create a responsive section consisting of text at the left and Three images at the right.
+ * @param {string} title : The title of Services
+ * @param {string[]} icon : The icons
+ * @param {string} description1 : The description
+ * @param {string} bgColor : To change background color
+ * @param {string[]} imageCenter : Three images that display on the center and top side of the component
+ * @return {JSX.Element}
+ * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
+ */
 
 
 export const SectionServices: VFC<ISectionServices> = ({
@@ -58,7 +56,7 @@ export const SectionServices: VFC<ISectionServices> = ({
             <div dir="rtl" className={"w-8/12 mt-5 gap-x-5  gap-y-10  h-56 grid grid-cols-3"}>
                 <div className={" col-span-3  md:col-span-1"}>
                     <div
-                        className={"w-3/6 relative group after:absolute after:content-[''] after:left-0 after:bottom-0 after:ease-in-out md:hover:after:scale-x-100 after:w-full after:h-1 after:bg-[#CA8F65] after:scale-x-0 after:origin-left    mx-auto h-[35%]  after:transition-transform after:transform after:duration-500"}>
+                        className={"w-3/6 relative group after:absolute after:content-[''] after:left-0 after:bottom-0 after:ease-in-out md:hover:after:scale-x-100 after:w-full after:h-1 after:bg-[#CA8F65] after:scale-x-0 after:origin-left    mx-auto h-[35%]  after:transition-transform after:transform after:duration-700"}>
                         <Image className={"mx-auto group-hover:scale-110 transition-all duration-500"}
                                src={icon[0]}
                                alt="Shipping in 24 hours"/></div>
@@ -69,7 +67,7 @@ export const SectionServices: VFC<ISectionServices> = ({
                 </div>
                 <div className={"col-span-3 md:col-span-1"}>
                     <div
-                        className={"w-3/6 relative group after:absolute after:content-[''] after:left-0 after:bottom-0 after:ease-in-out md:hover:after:scale-x-100 after:w-full after:h-1 after:bg-[#CA8F65] after:scale-x-0 after:origin-left    mx-auto h-[35%]  after:transition-transform after:transform after:duration-500"}>
+                        className={"w-3/6 relative group after:absolute after:content-[''] after:left-0 after:bottom-0 after:ease-in-out md:hover:after:scale-x-100 after:w-full after:h-1 after:bg-[#CA8F65] after:scale-x-0 after:origin-left    mx-auto h-[35%]  after:transition-transform after:transform after:duration-700"}>
                         <Image className={"mx-auto group-hover:scale-110 transition-all duration-500"}
                                src={icon[1]}
                                alt="128 available products"/></div>
@@ -80,7 +78,7 @@ export const SectionServices: VFC<ISectionServices> = ({
                 </div>
                 <div className={"col-span-3 md:col-span-1"}>
                     <div
-                        className={"w-3/6 relative group after:absolute after:content-[''] after:left-0 after:bottom-0 after:ease-in-out md:hover:after:scale-x-100 after:w-full after:h-1 after:bg-[#CA8F65] after:scale-x-0 after:origin-left    mx-auto h-[35%]  after:transition-transform after:transform after:duration-500"}>
+                        className={"w-3/6 relative group after:absolute after:content-[''] after:left-0 after:bottom-0 after:ease-in-out md:hover:after:scale-x-100 after:w-full after:h-1 after:bg-[#CA8F65] after:scale-x-0 after:origin-left    mx-auto h-[35%]  after:transition-transform after:transform after:duration-700"}>
                         <Image className={"mx-auto group-hover:scale-110 transition-all duration-500"}
                                src={icon[2]}
                                alt="11 years on the market"/></div>
