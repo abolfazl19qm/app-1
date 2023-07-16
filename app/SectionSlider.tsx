@@ -1,7 +1,8 @@
 "use client"
 import {VFC} from "react";
-import {Swiper, SwiperSlide} from 'swiper/react';
 import {useEffect, useRef, useState} from "react";
+// slider
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {EffectFade} from "swiper/modules";
 import 'swiper/css/effect-fade';
