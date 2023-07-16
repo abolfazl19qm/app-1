@@ -1,6 +1,6 @@
 import React, {VFC} from "react";
 
-interface IFooter {
+export interface IFooter {
     titleFirst: string;
     subTitleFirst1: string;
     subTitleFirst2: string;
@@ -25,6 +25,35 @@ interface IFooter {
     className?: string;
     refContainer?: React.Ref<HTMLDivElement>;
 }
+
+/**
+ * Create a responsive footer
+ * @param {string} titleFirst : title 1
+ * @param {string} titleSecond : title 2
+ * @param {string} titleThird : title 3
+ * @param {string} titleFourth : title 3
+ * @param {string} subTitleFirst1 : sub Title First 1
+ * @param {string} subTitleFirst2 : sub Title First 2
+ * @param {string} subTitleFirst3 : sub Title First 3
+ * @param {string} subTitleFirst4 : sub Title First 4
+ * @param {string} subTitleFirst5 : sub Title First 5
+ * @param {string} subTitleFirst6 : sub Title First 6
+ * @param {string} subTitleSecond1 : sub Title Second 1
+ * @param {string} subTitleSecond2 : sub Title Second 2
+ * @param {string} subTitleSecond3 : sub Title Second 3
+ * @param {string} subTitleSecond4 : sub Title Second 4
+ * @param {string} subTitleSecond5 : sub Title Second 5
+ * @param {string} subTitleThird1 : sub Title Third 1
+ * @param {string} subTitleThird2 : sub Title Third 2
+ * @param {string} subTitleThird3 : sub Title Third 3
+ * @param {string} subTitleFourth : description Title Fourth
+ * @param {string} className : add class
+ * @param {React.Ref<HTMLDivElement>} refContainer : ref
+ * @param {string} bgColor : background color
+ * @param {string[]} imagesTitleFourth : The images
+ * @return {JSX.Element}
+ * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
+ */
 
 export const Footer: VFC<IFooter> = ({
                                          className = "",

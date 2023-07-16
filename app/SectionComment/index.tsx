@@ -1,6 +1,6 @@
 import React, {VFC} from "react";
 
-interface ISectionComment {
+export interface ISectionComment {
     title: string;
     comment: string;
     image: string[];
@@ -10,6 +10,17 @@ interface ISectionComment {
 
 }
 
+/**
+ * Create a responsive section consisting of text at the left and Three images at the right.
+ * @param {string} title : The title of Comment
+ * @param {string} comment : The Comment
+ * @param {string} className : add class
+ * @param {React.Ref<HTMLDivElement>} refContainer : ref
+ * @param {string} bgColor : background color
+ * @param {string[]} image : The image
+ * @return {JSX.Element}
+ * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
+ */
 export const SectionComment: VFC<ISectionComment> = ({
                                                          className = "",
                                                          refContainer,

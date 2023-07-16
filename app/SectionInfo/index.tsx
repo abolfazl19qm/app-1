@@ -1,6 +1,6 @@
 import React, {VFC} from "react";
 
-interface ISectionInfo {
+export interface ISectionInfo {
     image: string[]
     phoneNumber: string;
     email: string;
@@ -14,9 +14,26 @@ interface ISectionInfo {
     bgColor: string;
     className?: string;
     refContainer?: React.Ref<HTMLDivElement>;
-
 }
 
+/**
+ * Create a responsive section consisting of text at the left and Three images at the right.
+ * @param {string} title : The title of Component
+ * @param {string} phoneNumber : The Phone Number
+ * @param {string} email : The Email
+ * @param {string} className : add class
+ * @param {string} subTitle : Description
+ * @param {string} titleAddress : title Address
+ * @param {string} address1 : Address
+ * @param {string} address2 : Address
+ * @param {string} nr1 : NR
+ * @param {string} nr2 : NR
+ * @param {React.Ref<HTMLDivElement>} refContainer : ref
+ * @param {string} bgColor : background color
+ * @param {string[]} image : The image
+ * @return {JSX.Element}
+ * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
+ */
 
 export const SectionInfo: VFC<ISectionInfo> = ({
                                                    className = "",
