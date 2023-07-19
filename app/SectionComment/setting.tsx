@@ -34,6 +34,16 @@ export const SettingsSection = (): JSX.Element => {
                 set({title: val});
             },
         }),
+        titleColor: createSettingColorPalette({
+            id: "titleColor",
+            label: translator("رنگ عنوان "),
+            className: "mt-5",
+            value: get.titleColor,
+            onClick(colorName: string) {
+                set({titleColor: colorName});
+            },
+        }),
+
         comment: createSettingSidebarTextarea({
             id: "comment",
             label: translator("کامنت"),
@@ -49,6 +59,15 @@ export const SettingsSection = (): JSX.Element => {
             },
             onChangeText(val: string) {
                 set({comment: val});
+            },
+        }),
+        commentColor: createSettingColorPalette({
+            id: "commentColor",
+            label: translator("رنگ متن "),
+            className: "mt-5",
+            value: get.commentColor,
+            onClick(colorName: string) {
+                set({commentColor: colorName});
             },
         }),
         bgColor: createSettingColorPalette({

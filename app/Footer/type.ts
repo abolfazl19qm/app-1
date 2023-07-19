@@ -6,6 +6,7 @@ import {
 } from "@components/sidebar/components/settings";
 
 export interface FooterType {
+    titleColor: colorPalette;
     titleFirst: sidebarTextInput;
     subTitleFirst1: sidebarTextInput;
     subTitleFirst2: sidebarTextInput;

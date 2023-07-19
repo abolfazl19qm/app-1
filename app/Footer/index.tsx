@@ -1,6 +1,7 @@
 import React, {VFC} from "react";
 
 export interface IFooter {
+    titleColor: string;
     titleFirst: string;
     subTitleFirst1: string;
     subTitleFirst2: string;
@@ -29,6 +30,7 @@ export interface IFooter {
 /**
  * Create a responsive footer
  * @param {string} titleFirst : title 1
+ * @param {string} titleColor : Titles Color
  * @param {string} titleSecond : title 2
  * @param {string} titleThird : title 3
  * @param {string} titleFourth : title 3
@@ -59,6 +61,7 @@ export const Footer: VFC<IFooter> = ({
                                          className = "",
                                          refContainer,
                                          bgColor = "",
+                                         titleColor = "#ca8f65",
                                          titleFirst = "Blenders pride",
                                          titleSecond = "Customer service",
                                          subTitleFirst1 = "Contact us",
@@ -85,7 +88,7 @@ export const Footer: VFC<IFooter> = ({
             <div className={"xl:w-[75%] lg:w-[85%] md:ml-10  xl:h-[320px] lg:mx-auto"}>
                 <ul className={"w-full h-full gap-5 justify-between grid grid-cols-5"}>
                     <li className={"md:col-span-1  h-full col-span-5 text-center md:text-left "}>
-                        <span className={"h-[10%]  text-[#ca8f65] font-medium text-sm lg:text-xl"}>{titleFirst}</span>
+                        <span style={{color: titleColor}} className={"h-[10%] font-medium text-sm lg:text-xl"}>{titleFirst}</span>
                         <ul className={"mt-5 h-[60%] flex flex-col justify-evenly "}>
                             <li className={"text-[12px] lg:text-sm xl:text-[20px]  text-[#8e8e8e] md:hover:decoration-1 transition-all duration-500 md:hover:text-[#ca8f65]  hover:underline decoration-[#ca8f65] cursor-pointer"}>
                                 {subTitleFirst1}
@@ -108,7 +111,7 @@ export const Footer: VFC<IFooter> = ({
                         </ul>
                     </li>
                     <li className={"md:col-span-1  col-span-5 text-center md:text-left "}>
-                        <span className={"h-[10%] text-[#ca8f65] font-medium text-sm lg:text-xl"}>{titleSecond}</span>
+                        <span style={{color: titleColor}} className={"h-[10%]  font-medium text-sm lg:text-xl"}>{titleSecond}</span>
                         <ul className={"mt-5 h-[60%] flex flex-col justify-evenly "}>
                             <li className={" xl:text-[20px] text-[#8e8e8e] text-[12px] lg:text-sm md:hover:decoration-1 transition-all duration-500 md:hover:text-[#ca8f65]  hover:underline decoration-[#ca8f65] cursor-pointer"}>
                                 {subTitleSecond1}
@@ -123,8 +126,8 @@ export const Footer: VFC<IFooter> = ({
                             </li>
                         </ul>
                     </li>
-                    <li className={"md:col-span-1 col-span-5 text-center md:text-left "}>
-                        <span className={"h-[10%] text-[#ca8f65] font-medium text-sm lg:text-xl"}>{titleThird}</span>
+                    <li  className={"md:col-span-1 col-span-5 text-center md:text-left "}>
+                        <span style={{color: titleColor}} className={"h-[10%] font-medium text-sm lg:text-xl"}>{titleThird}</span>
                         <ul className={"mt-5 h-[70%] lg:w-[80%] w-full flex flex-col justify-evenly "}>
                             <li className={" text-[#8e8e8e] text-[12px] lg:text-sm xl:text-[16px]"}>{subTitleThird1}
                             </li>
@@ -136,7 +139,7 @@ export const Footer: VFC<IFooter> = ({
                         </ul>
                     </li>
                     <li className={"md:col-span-2 w-4/6 mx-auto col-span-5 mt-5 md:mt-0 text-center md:text-left "}>
-                        <span className={"h-[10%] text-[#ca8f65] font-medium text-sm lg:text-xl"}>{titleFourth}</span>
+                        <span style={{color: titleColor}} className={"h-[10%] font-medium text-sm lg:text-xl"}>{titleFourth}</span>
                         <p className={"text-[#8e8e8e] mt-5 xl:text-[20px]"}>
                             {subTitleFourth}</p>
                         <div className={"flex mt-14 justify-evenly"}>
