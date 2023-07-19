@@ -3,7 +3,8 @@ import React, {VFC} from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {useEffect, useRef, useState} from "react";
 import 'swiper/css';
-import {EffectFade} from "swiper/modules";
+// import Swiper core and required modules
+import {EffectFade} from "swiper";
 import 'swiper/css/effect-fade';
 import Image from "next/image";
 
@@ -328,9 +329,10 @@ const Slide: VFC<ISlide> = ({
             </div>
             <div className={"md:col-span-1 col-span-9 hidden md:block row-span-5 md:row-span-1"}></div>
             <div className={"w-full md:col-span-4 col-span-9 row-span-5 md:row-span-1  md:h-full"}>
-                <Image className={"w-[85%] sm:[70%] md:w-[85%]  lg:w-[80%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]" + slidel}
-                       src={img}
-                       alt="DRINK"/>
+                <Image
+                    className={"w-[85%] sm:[70%] md:w-[85%]  lg:w-[80%]   mt-10 mx-auto h-96 md:h-96 xl:h-[650px]" + slidel}
+                    src={img}
+                    alt="DRINK"/>
             </div>
         </section>
     )

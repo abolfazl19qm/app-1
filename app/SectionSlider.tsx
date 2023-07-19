@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 // slider
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import {EffectFade} from "swiper/modules";
+import {EffectFade} from "swiper";
 import 'swiper/css/effect-fade';
 
 interface ISlider {
@@ -85,7 +85,7 @@ export const SectionSlider: VFC<ISlider> = ({
             btn3: "text-zinc-400 opacity-20",
             btn4: "text-zinc-400 opacity-20",
             slide1: "scale-100 lg:mr-10 opacity-100",
-            slide2: "scale-75 lg:-mr-20 opacity-0",
+            slide2: "scale-75 lg:-mr-20 opacity-0z  ",
             slide3: "scale-75 lg:-mr-20 opacity-0",
             slide4: "scale-75 lg:-mr-20 opacity-0",
             slide5: "scale-100 lg:ml-10 opacity-100",
