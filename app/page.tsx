@@ -85,10 +85,7 @@ export default function Home() {
             <SectionSlider {...sectionSlider} />
             <SectionServices {...sectionProduct} />
             <SectionEvent {...sectionEvent}/>
-
             <SectionInfo/>
-            <br/>
-            <br/>
             <br/>
             <br/>
             <br/>

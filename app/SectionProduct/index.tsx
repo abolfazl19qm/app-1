@@ -1,5 +1,5 @@
-import {Product} from "@/app/Pruduct";
-import {VFC} from "react";
+import {Product} from "./Product/index";
+import React, {VFC} from "react";
 
 interface ISectionProduct {
     title1: string;
@@ -78,10 +78,85 @@ interface ISectionProduct {
     categoriesTitle: string;
     btnText: string;
     bgColor: string;
+    className?: string;
+    refContainer?: React.Ref<HTMLDivElement>;
 
 }
 
+/**
+ * Create a responsive section Product.
+ * @param {string} title1 : The title of Product 1
+ * @param {string} title2 : The title of Product 2
+ * @param {string} title3 : The title of Product 3
+ * @param {string} title4 : The title of Product 4
+ * @param {string} title5 : The title of Product 5
+ * @param {string} title6 : The title of Product 6
+ * @param {string[]} image1 : The image Product 1
+ * @param {string[]} image2 : The image Product 2
+ * @param {string[]} image3 : The image Product 3
+ * @param {string[]} image4 : The image Product 4
+ * @param {string[]} image5 : The image Product 5
+ * @param {string[]} image6 : The image Product 6
+ * @param {string} description1 : The description 1
+ * @param {string} description2 : The description 2
+ * @param {string} description3 : The description 3
+ * @param {string} description4 : The description 4
+ * @param {string} description5 : The description 5
+ * @param {string} description6 : The description 6
+ * @param {string} price1 : The price 1
+ * @param {string} price2 : The price 2
+ * @param {string} price3 : The price 3
+ * @param {string} price4 : The price 4
+ * @param {string} price5 : The price 5
+ * @param {string} price6 : The price 6
+ * @param {string[]} categories1 : The Categories 1
+ * @param {string[]} categories2 : The Categories 2
+ * @param {string[]} categories3 : The Categories 3
+ * @param {string[]} categories4 : The Categories 4
+ * @param {string[]} categories5 : The Categories 5
+ * @param {string[]} categories6 : The Categories 6
+ * @param {string[]} categoriesTitle : The Categories Title
+ * @param {string[]} slideImage1 : The image slid show 1
+ * @param {string[]} slideImage2 : The image slid show 2
+ * @param {string[]} slideImage3 : The image slid show 3
+ * @param {string[]} slideImage4 : The image slid show 4
+ * @param {string[]} slideImage5 : The image slid show 5
+ * @param {string[]} slideImage6 : The image slid show 6
+ * @param {string[]} Capacity1 : The Capacity 1
+ * @param {string[]} Capacity2 : The Capacity 2
+ * @param {string[]} Capacity3 : The Capacity 3
+ * @param {string[]} Capacity4 : The Capacity 4
+ * @param {string[]} Capacity5 : The Capacity 5
+ * @param {string[]} Capacity6 : The Capacity 6
+ * @param {string[]} categoriesLink1 : The Categories Links 1
+ * @param {string[]} categoriesLink2 : The Categories Links 2
+ * @param {string[]} categoriesLink3 : The Categories Links 3
+ * @param {string[]} categoriesLink4 : The Categories Links 4
+ * @param {string[]} categoriesLink5 : The Categories Links 5
+ * @param {string[]} categoriesLink6 : The Categories Links 6
+ * @param {string} productId1 : The id 1
+ * @param {string} productId2 : The id 2
+ * @param {string} productId3 : The id 3
+ * @param {string} productId4 : The id 4
+ * @param {string} productId5 : The id 5
+ * @param {string} productId6 : The id 6
+ * @param {string} Discount1 : The Discount 1
+ * @param {string} Discount2 : The Discount 2
+ * @param {string} Discount3 : The Discount 3
+ * @param {string} Discount4 : The Discount 4
+ * @param {string} Discount5 : The Discount 5
+ * @param {string} Discount6 : The Discount 6
+ * @param {string} CapacityTitle : The Capacity Title
+ * @param {string} bgColor : To change background color
+ * @param {string} btnText : To button text
+ * @return {JSX.Element}
+ * @author Abolfazl Mehdizade <Abolfazl19qm@gmail.com>
+ */
+
+
 export const SectionProduct: VFC<ISectionProduct> = ({
+                                                         className = "",
+                                                         refContainer,
                                                          title1 = "Bourbon Blend",
                                                          title2 = "Bourbon Blend",
                                                          title3 = "Bourbon Blend",
@@ -248,7 +323,8 @@ export const SectionProduct: VFC<ISectionProduct> = ({
     ]
     return (
         <section
-            className={"grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[900px] mx-auto gap-10"}>
+            ref={refContainer}
+            className={className + " grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[900px] mx-auto gap-10"}>
             {Products.map((value) => (
                 <Product {...value} key={value.title}/>
             ))}
