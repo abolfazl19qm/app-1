@@ -5,6 +5,7 @@ import {SectionSlider} from "@/app/SectionSlider";
 import {Footer} from "@/app/footer";
 import {SectionInfo} from "@/app/SectionInfo";
 import {SectionComment} from "@/app/SectionComment";
+import {SectionProduct} from "@/app/SectionProduct";
 
 
 
@@ -70,13 +71,21 @@ const sectionSlider = {
 }
 export default function Home() {
     return (
-        <div className={"bg-[#2a2a2a]"}>
+        <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={""}>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <SectionProduct/>
+            <br/>
             <br/>
             <br/>
             <SectionLogo {...sectionLogo} />
             <SectionSlider {...sectionSlider} />
             <SectionServices {...sectionProduct} />
             <SectionEvent {...sectionEvent}/>
+
             <SectionInfo/>
             <br/>
             <br/>
