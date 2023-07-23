@@ -1,256 +1,225 @@
 import {Product} from "@/app/Pruduct";
-import {VFC} from "react";
+import React, {VFC} from "react";
+
+
+const data =
+    {
+        "Product_1": {
+            "name": "Bourbon Blend",
+            "price": "2000$",
+            "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
+            "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
+            "buttonText": "add",
+            "product_code": "11101-Pc",
+            "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
+            "Capacity": ["100 Ml", "200 Ml"],
+            "Discount": "10%",
+            "CapacityTitle": "Capacity",
+            "categoriesTitle": "Categories",
+            "categories": ["none", "otherNone"],
+            "categoriesLink": ["/", "/"],
+        },
+        "Product_2": {
+            "name": "Bourbon Blend",
+            "price": "2000$",
+            "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
+            "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
+            "buttonText": "add",
+            "product_code": "11101-Pc",
+            "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
+            "Capacity": ["100 Ml", "200 Ml"],
+            "CapacityTitle": "Capacity",
+            "categoriesTitle": "Categories",
+            "Discount": "10%",
+            "categories": ["none", "otherNone"],
+            "categoriesLink": ["/", "/"],
+        },
+        "Product_3": {
+            "name": "Bourbon Blend",
+            "price": "2000$",
+            "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
+            "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
+            "buttonText": "add",
+            "product_code": "11101-Pc",
+            "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
+            "Capacity": ["100 Ml", "200 Ml"],
+            "Discount": "10%",
+            "CapacityTitle": "Capacity",
+            "categoriesTitle": "Categories",
+            "categories": ["none", "otherNone"],
+            "categoriesLink": ["/", "/"],
+        },
+        "Product_4": {
+            "name": "Bourbon Blend",
+            "price": "2000$",
+            "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
+            "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
+            "buttonText": "add",
+            "product_code": "11101-Pc",
+            "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
+            "Capacity": ["100 Ml", "200 Ml"],
+            "Discount": "10%",
+            "CapacityTitle": "Capacity",
+            "categoriesTitle": "Categories",
+            "categories": ["none", "otherNone"],
+            "categoriesLink": ["/", "/"],
+        },
+        "Product_5": {
+            "name": "Bourbon Blend",
+            "price": "2000$",
+            "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
+            "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
+            "buttonText": "add",
+            "product_code": "11101-Pc",
+            "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
+            "Capacity": ["100 Ml", "200 Ml"],
+            "Discount": "10%",
+            "CapacityTitle": "Capacity",
+            "categoriesTitle": "Categories",
+            "categories": ["none", "otherNone"],
+            "categoriesLink": ["/", "/"],
+        },
+        "Product_6": {
+            "name": "Bourbon Blend",
+            "price": "2000$",
+            "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
+            "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
+            "buttonText": "add",
+            "product_code": "11101-Pc",
+            "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
+            "Capacity": ["100 Ml", "200 Ml"],
+            "Discount": "10%",
+            "CapacityTitle": "Capacity",
+            "categoriesTitle": "Categories",
+            "categories": ["none", "otherNone"],
+            "categoriesLink": ["/", "/"],
+        },
+    }
 
 interface ISectionProduct {
-    title1: string;
-    image1: string;
-    price1: string;
-    description1: string;
-    Capacity1: string[];
-    Discount1: string;
-    btnText1: string;
-    categories1: string[];
-    categoriesLink1: string[];
-    productId1: string;
-    slideImage1: string[];
-
-    title2: string;
-    image2: string;
-    price2: string;
-    description2: string;
-    Capacity2: string[];
-    Discount2: string;
-    btnText2: string;
-    categories2: string[];
-    categoriesLink2: string[];
-    productId2: string;
-    slideImage2: string[];
-
-    title3: string;
-    image3: string;
-    price3: string;
-    description3: string;
-    Capacity3: string[];
-    Discount3: string;
-    btnText3: string;
-    categories3: string[];
-    categoriesLink3: string[];
-    productId3: string;
-    slideImage3: string[];
-
-    title4: string;
-    image4: string;
-    price4: string;
-    description4: string;
-    Capacity4: string[];
-    Discount4: string;
-    btnText4: string;
-    categories4: string[];
-    categoriesLink4: string[];
-    productId4: string;
-    slideImage4: string[];
-
-    title5: string;
-    image5: string;
-    price5: string;
-    description5: string;
-    Capacity5: string[];
-    Discount5: string;
-    btnText5: string;
-    categories5: string[];
-    categoriesLink5: string[];
-    productId5: string;
-    slideImage5: string[];
-
-    title6: string;
-    image6: string;
-    price6: string;
-    description6: string;
-    Capacity6: string[];
-    Discount6: string;
-    btnText6: string;
-    categories6: string[];
-    categoriesLink6: string[];
-    productId6: string;
-    slideImage6: string[];
-
-    CapacityTitle: string;
-    categoriesTitle: string;
     btnText: string;
+    btnColor: string;
     bgColor: string;
+    titleColor: string;
+    captionColor: string;
+    className?: string;
+    refContainer?: React.Ref<HTMLDivElement>;
 
 }
 
 export const SectionProduct: VFC<ISectionProduct> = ({
-                                                         title1 = "Bourbon Blend",
-                                                         title2 = "Bourbon Blend",
-                                                         title3 = "Bourbon Blend",
-                                                         title4 = "Bourbon Blend",
-                                                         title5 = "Bourbon Blend",
-                                                         title6 = "Bourbon Blend",
-                                                         price1 = "$35.00 – $60.00",
-                                                         price2 = "$35.00 – $60.00",
-                                                         price3 = "$35.00 – $60.00",
-                                                         price4 = "$35.00 – $60.00",
-                                                         price5 = "$35.00 – $60.00",
-                                                         price6 = "$35.00 – $60.00",
-                                                         image1 = "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
-                                                         image2 = "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic2-600x600.webp",
-                                                         image3 = "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic3-600x600.webp",
-                                                         image4 = "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic4-600x600.webp",
-                                                         image5 = "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic5-600x600.webp",
-                                                         image6 = "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic6-600x600.webp",
-                                                         description1 = "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
-                                                         description2 = "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
-                                                         description3 = "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
-                                                         description4 = "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
-                                                         description5 = "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
-                                                         description6 = "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
-                                                         categories1 = ["ornare", "Blend"],
-                                                         categories2 = ["ornare", "Blend"],
-                                                         categories3 = ["ornare", "Blend"],
-                                                         categories4 = ["ornare", "Blend"],
-                                                         categories5 = ["ornare", "Blend"],
-                                                         categories6 = ["ornare", "Blend"],
-                                                         productId1 = "SKU: BE/WH/1252",
-                                                         productId2 = "SKU: BE/WH/1252",
-                                                         productId3 = "SKU: BE/WH/1252",
-                                                         productId4 = "SKU: BE/WH/1252",
-                                                         productId5 = "SKU: BE/WH/1252",
-                                                         productId6 = "SKU: BE/WH/1252",
-                                                         Discount1 = "10%",
-                                                         Discount2 = "10%",
-                                                         Discount3 = "40%",
-                                                         Discount4 = "10%",
-                                                         Discount5 = "70%",
-                                                         Discount6 = "5%",
-                                                         slideImage1 = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1b.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1a.webp"],
-                                                         slideImage2 = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1b.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1a.webp"],
-                                                         slideImage3 = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1b.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1a.webp"],
-                                                         slideImage4 = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1b.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1a.webp"],
-                                                         slideImage5 = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1b.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1a.webp"],
-                                                         slideImage6 = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1b.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1a.webp"],
-                                                         categoriesLink1 = ["/", "/"],
-                                                         categoriesLink2 = ["/", "/"],
-                                                         categoriesLink3 = ["/", "/"],
-                                                         categoriesLink4 = ["/", "/"],
-                                                         categoriesLink5 = ["/", "/"],
-                                                         categoriesLink6 = ["/", "/"],
+                                                         className = " ",
+                                                         refContainer,
+                                                         titleColor = "#ca8f65",
+                                                         btnColor = "#ca8f65",
+                                                         captionColor = "#8e8e8e",
                                                          bgColor = "#2a2a2a",
-                                                         categoriesTitle = "Categories",
-                                                         CapacityTitle = "Capacity",
                                                          btnText = "Add",
-                                                         Capacity1 = ["1 L", "950 Ml", "2 L"],
-                                                         Capacity2 = ["0.5 L", "750 Ml", "2 L"],
-                                                         Capacity3 = ["330 Ml", "2 L"],
-                                                         Capacity4 = ["550 Ml", "1 L"],
-                                                         Capacity5 = ["780 Ml"],
-                                                         Capacity6 = ["200 Ml"],
-
                                                      }) => {
     const Products = [
         {
-            title: title1,
-            image: image1,
-            price: price1,
+            title: data.Product_1.name,
+            image: data.Product_1.images,
+            price: data.Product_1.price,
             bgColor: bgColor,
-            description: description1,
-            Capacity: Capacity1,
-            Discount: Discount1,
+            description: data.Product_1.caption,
+            Capacity: data.Product_1.Capacity,
+            Discount: data.Product_1.Discount,
             btnText: btnText,
-            CapacityTitle: CapacityTitle,
-            categories: categories1,
-            categoriesTitle: categoriesTitle,
-            categoriesLink: categoriesLink1,
-            productId: productId1,
-            slideImage: slideImage1,
+            CapacityTitle: data.Product_1.CapacityTitle,
+            categories: data.Product_1.categories,
+            categoriesTitle: data.Product_1.categoriesTitle,
+            categoriesLink: data.Product_1.categoriesLink,
+            productId: data.Product_1.product_code,
+            slideImage: data.Product_1.slideImage,
         },
         {
-            title: title2,
-            image: image2,
-            price: price2,
+            title: data.Product_2.name,
+            image: data.Product_2.images,
+            price: data.Product_2.price,
             bgColor: bgColor,
-            description: description2,
-            Capacity: Capacity2,
-            Discount: Discount2,
+            description: data.Product_2.caption,
+            Capacity: data.Product_2.Capacity,
+            Discount: data.Product_2.Discount,
             btnText: btnText,
-            CapacityTitle: CapacityTitle,
-            categories: categories2,
-            categoriesTitle: categoriesTitle,
-            categoriesLink: categoriesLink2,
-            productId: productId2,
-            slideImage: slideImage2,
+            CapacityTitle: data.Product_2.CapacityTitle,
+            categories: data.Product_2.categories,
+            categoriesTitle: data.Product_2.categoriesTitle,
+            categoriesLink: data.Product_2.categoriesLink,
+            productId: data.Product_2.product_code,
+            slideImage: data.Product_2.slideImage,
         },
         {
-            title: title3,
-            image: image3,
-            price: price3,
+            title: data.Product_3.name,
+            image: data.Product_3.images,
+            price: data.Product_3.price,
             bgColor: bgColor,
-            description: description3,
-            Capacity: Capacity3,
-            Discount: Discount3,
+            description: data.Product_3.caption,
+            Capacity: data.Product_3.Capacity,
+            Discount: data.Product_3.Discount,
             btnText: btnText,
-            CapacityTitle: CapacityTitle,
-            categories: categories3,
-            categoriesTitle: categoriesTitle,
-            categoriesLink: categoriesLink3,
-            productId: productId3,
-            slideImage: slideImage3,
+            CapacityTitle: data.Product_3.CapacityTitle,
+            categories: data.Product_3.categories,
+            categoriesTitle: data.Product_3.categoriesTitle,
+            categoriesLink: data.Product_3.categoriesLink,
+            productId: data.Product_3.product_code,
+            slideImage: data.Product_3.slideImage,
         },
         {
-            title: title4,
-            image: image4,
-            price: price4,
+            title: data.Product_4.name,
+            image: data.Product_4.images,
+            price: data.Product_4.price,
             bgColor: bgColor,
-            description: description4,
-            Capacity: Capacity4,
-            Discount: Discount4,
+            description: data.Product_4.caption,
+            Capacity: data.Product_4.Capacity,
+            Discount: data.Product_4.Discount,
             btnText: btnText,
-            CapacityTitle: CapacityTitle,
-            categories: categories4,
-            categoriesTitle: categoriesTitle,
-            categoriesLink: categoriesLink4,
-            productId: productId4,
-            slideImage: slideImage4,
+            CapacityTitle: data.Product_4.CapacityTitle,
+            categories: data.Product_4.categories,
+            categoriesTitle: data.Product_4.categoriesTitle,
+            categoriesLink: data.Product_4.categoriesLink,
+            productId: data.Product_4.product_code,
+            slideImage: data.Product_4.slideImage,
         },
         {
-            title: title5,
-            image: image5,
-            price: price5,
+            title: data.Product_5.name,
+            image: data.Product_5.images,
+            price: data.Product_5.price,
             bgColor: bgColor,
-            description: description5,
-            Capacity: Capacity5,
-            Discount: Discount5,
+            description: data.Product_5.caption,
+            Capacity: data.Product_5.Capacity,
+            Discount: data.Product_5.Discount,
             btnText: btnText,
-            CapacityTitle: CapacityTitle,
-            categories: categories5,
-            categoriesTitle: categoriesTitle,
-            categoriesLink: categoriesLink5,
-            productId: productId5,
-            slideImage: slideImage5,
+            CapacityTitle: data.Product_5.CapacityTitle,
+            categories: data.Product_5.categories,
+            categoriesTitle: data.Product_5.categoriesTitle,
+            categoriesLink: data.Product_5.categoriesLink,
+            productId: data.Product_5.product_code,
+            slideImage: data.Product_5.slideImage,
         },
         {
-            title: title6,
-            image: image6,
-            price: price6,
+            title: data.Product_6.name,
+            image: data.Product_6.images,
+            price: data.Product_6.price,
             bgColor: bgColor,
-            description: description6,
-            Capacity: Capacity6,
-            Discount: Discount6,
+            description: data.Product_6.caption,
+            Capacity: data.Product_6.Capacity,
+            Discount: data.Product_6.Discount,
             btnText: btnText,
-            CapacityTitle: CapacityTitle,
-            categories: categories6,
-            categoriesTitle: categoriesTitle,
-            categoriesLink: categoriesLink6,
-            productId: productId6,
-            slideImage: slideImage6,
-        },
+            CapacityTitle: data.Product_6.CapacityTitle,
+            categories: data.Product_6.categories,
+            categoriesTitle: data.Product_6.categoriesTitle,
+            categoriesLink: data.Product_6.categoriesLink,
+            productId: data.Product_6.product_code,
+            slideImage: data.Product_6.slideImage,
+        }
     ]
     return (
         <section
-            className={"grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[900px] mx-auto gap-10"}>
+            ref={refContainer}
+            className={className +  " grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[900px] mx-auto gap-10"}>
             {Products.map((value) => (
-                <Product {...value} key={value.title}/>
+                <Product btnColor={btnColor} titleColor={titleColor} captionColor={captionColor} {...value} key={value.title}/>
             ))}
         </section>)
 }

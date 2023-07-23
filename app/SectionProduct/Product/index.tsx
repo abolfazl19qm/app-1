@@ -14,6 +14,8 @@ import {Navigation, Autoplay} from 'swiper';
 
 
 interface IProduct {
+    captionColor: string;
+    titleColor: string;
     image: string;
     bgColor: string;
     title: string;
@@ -27,11 +29,15 @@ interface IProduct {
     categories: string[];
     categoriesLink: string[];
     productId: string;
+    btnColor: string;
     slideImage: string[];
 
 }
 
 export const Product: VFC<IProduct> = ({
+                                           btnColor,
+                                           captionColor,
+                                           titleColor,
                                            image,
                                            price,
                                            title,
@@ -51,6 +57,7 @@ export const Product: VFC<IProduct> = ({
     const [display, setDisplay] = useState("opacity-0 invisible top-10")
     const [countProduct, setCountProduct] = useState(1)
     const [favourite, setFavourite] = useState(false)
+    const SwiperStyle : object = {'--swiper-navigation-color': "rgb(59,57,57)"}
     return (
         <>
             <div className={"col-span-3 md:col-span-2 group flex justify-center relative items-center flex-col"}>
@@ -70,7 +77,7 @@ export const Product: VFC<IProduct> = ({
                     </button>
                     <div className={"col-span-2 md:col-span-1"}>
                         <div className={""}>
-                            <Swiper navigation={true} style={{"--swiper-navigation-color": '#262524'}}
+                            <Swiper navigation={true} style={SwiperStyle}
                                     modules={[Navigation, Autoplay]} autoplay={true} loop={true} className="mySwiper">
                                 {slideImage.map((value, index) => (
                                     <SwiperSlide key={value + index}><img src={value} alt="drink"/></SwiperSlide>
@@ -79,11 +86,11 @@ export const Product: VFC<IProduct> = ({
                         </div>
                     </div>
                     <div className={"col-span-2 md:col-span-1 p-4"}>
-                        <h1 className={"mt-4 font-medium text-4xl text-[#ca8f65]"}>{title}</h1>
-                        <p className={"mt-4 text-xl text-[#ca8f65]"}>{price}</p>
-                        <p className={"mt-4 text-zinc-500"}>{description}</p>
+                        <h1 style={{color: titleColor}} className={"mt-4 font-medium text-4xl "}>{title}</h1>
+                        <p style={{color: titleColor}} className={"mt-4 text-xl"}>{price}</p>
+                        <p style={{color: captionColor}} className={"mt-4 "}>{description}</p>
                         <div className={"lg:w-[50%] w-[75%]  mt-8 flex items-center justify-between h-2 lg:h-5"}>
-                            <p className={"text-xl text-zinc-500"}>{CapacityTitle}</p>
+                            <p style={{color: captionColor}} className={"text-xl "}>{CapacityTitle}</p>
                             <div className={"flex gap-x-1"}>
                                 {Capacity.map((value, index) => (
                                     <button key={value + index}
@@ -118,8 +125,10 @@ export const Product: VFC<IProduct> = ({
                                 </button>
                             </div>
                             <button
-                                className={"w-[35%]  flex items-center justify-center font-medium text-[15px] h-12 bg-[#ca8f65] "}>{btnText}</button>
-                            <button className={"w-[15%] h-12 flex items-center justify-center text-[#ca8f65]"}>
+                                style={{backgroundColor: btnColor}}
+                                className={"w-[35%]  flex items-center justify-center font-medium text-[15px] h-12"}>{btnText}</button>
+                            <button style={{color: btnColor}}
+                                    className={"w-[15%] h-12 flex items-center justify-center"}>
                                 {!favourite &&
                                     <svg onClick={() => setFavourite(true)} xmlns="http://www.w3.org/2000/svg"
                                          fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
@@ -151,14 +160,17 @@ export const Product: VFC<IProduct> = ({
                     </div>
                 </div>
                 <p style={{color: "white"}} className={"mt-5 text-xl "}>{title}</p>
-                <span className={"mt-2 text-[#ca8f65]"}>{price}</span>
+                <span style={{color: titleColor}} className={"mt-2 "}>{price}</span>
                 <span
                     className={"w-10 h-6 bg-[#ca8f65] text-white  absolute text-[12px] left-5 lg:top-5 top-1 flex justify-center items-center  rounded-[3px]"}>{Discount}</span>
                 <div
                     className={"w-8 md:h-28 h-20 md:group-hover:opacity-100 opacity-100 duration-500 transition-all md:opacity-0  group-hover:top-5  flex-col flex justify-between text-white absolute top-0 md:top-7 right-0 "}>
                     <button
                         className={"text-white hover:text-[#ca8f65] group relative transition-all duration-300"}>
-                        <span className={"w-28 h-5 opacity-0  md:hover:opacity-60 text-[10px] -mt-2 -left-24 rounded-md text-white font-medium absolute  "}><p className={"w-[70%] py-5 rounded-md h-full flex justify-center items-center float-left relative bg-zinc-600"}>View Product</p><div className={"w-5 h-5 absolute right-7 mt-2 bg-zinc-600 -z-10 rotate-45"}></div></span>
+                        <span
+                            className={"w-28 h-5 opacity-0  md:hover:opacity-60 text-[10px] -mt-2 -left-24 rounded-md text-white font-medium absolute  "}><p
+                            className={"w-[70%] py-5 rounded-md h-full flex justify-center items-center float-left relative bg-zinc-600"}>View Product</p><div
+                            className={"w-5 h-5 absolute right-7 mt-2 bg-zinc-600 -z-10 rotate-45"}></div></span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                              stroke="currentColor" className="w-5 hidden  md:block h-5">
                             <path strokeLinecap="round" strokeLinejoin="round"
@@ -166,7 +178,10 @@ export const Product: VFC<IProduct> = ({
                         </svg>
                     </button>
                     <button className={"text-white hover:text-[#ca8f65] transition-all relative duration-300"}>
-                        <span className={"w-28 h-5 opacity-0 hover:opacity-60 text-[10px] -mt-2 -left-24 rounded-md text-white font-medium absolute  "}><p className={"w-[70%] py-5 rounded-md h-full flex justify-center items-center float-left relative bg-zinc-600"}>Add Favourite</p><div className={"w-5 h-5 absolute right-7 mt-2 bg-zinc-600 -z-10 rotate-45"}></div></span>
+                        <span
+                            className={"w-28 h-5 opacity-0 hover:opacity-60 text-[10px] -mt-2 -left-24 rounded-md text-white font-medium absolute  "}><p
+                            className={"w-[70%] py-5 rounded-md h-full flex justify-center items-center float-left relative bg-zinc-600"}>Add Favourite</p><div
+                            className={"w-5 h-5 absolute right-7 mt-2 bg-zinc-600 -z-10 rotate-45"}></div></span>
                         {!favourite &&
                             <svg onClick={() => setFavourite(true)} xmlns="http://www.w3.org/2000/svg" fill="none"
                                  viewBox="0 0 24 24" strokeWidth="1.5"
@@ -185,7 +200,10 @@ export const Product: VFC<IProduct> = ({
                     <button
                         onClick={() => setDisplay("opacity-100  visible top-[50%]")}
                         className={"text-white hover:text-[#ca8f65] relative transition-all duration-300"}>
-                        <span className={"w-28 h-5 opacity-0 hover:opacity-60 text-[10px] -mt-2 -left-24 rounded-md text-white font-medium absolute  "}><p className={"w-[70%] py-5 rounded-md h-full flex justify-center items-center float-left relative bg-zinc-600"}>Preview</p><div className={"w-5 h-5 absolute right-7 mt-2 bg-zinc-600 -z-10 rotate-45"}></div></span>
+                        <span
+                            className={"w-28 h-5 opacity-0 hover:opacity-60 text-[10px] -mt-2 -left-24 rounded-md text-white font-medium absolute  "}><p
+                            className={"w-[70%] py-5 rounded-md h-full flex justify-center items-center float-left relative bg-zinc-600"}>Preview</p><div
+                            className={"w-5 h-5 absolute right-7 mt-2 bg-zinc-600 -z-10 rotate-45"}></div></span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                              stroke="currentColor" className="w-5 h-5">
                             <path strokeLinecap="round" strokeLinejoin="round"
