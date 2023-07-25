@@ -8,6 +8,7 @@ import {SectionComment} from "@/app/SectionComment";
 import {SectionProduct} from "@/app/SectionProduct";
 import {SiteHeaderWh} from "@/app/none/none";
 import {SectionAbout} from "@/app/SectionAbout";
+import {HeaderAbout} from "@/app/HeaderAbout";
 
 
 
@@ -73,13 +74,14 @@ const sectionSlider = {
 }
 export default function Home() {
     return (
-        <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={""}>
+        <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={"max-w-[2000px]"}>
             <br/>
+            <br/>
+            <br/>
+            <HeaderAbout/>
             <br/>
             <br/>
             <SectionAbout/>
-            <br/>
-            <br/>
             <br/>
             <br/>
             <br/>

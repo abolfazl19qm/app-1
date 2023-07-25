@@ -1,6 +1,6 @@
 import React, {VFC} from "react";
 
-interface ISectionAbout {
+export interface ISectionAbout {
     image: string[]
     title: string;
     titleColor: string;
