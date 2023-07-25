@@ -217,7 +217,7 @@ export const SectionProduct: VFC<ISectionProduct> = ({
     return (
         <section
             ref={refContainer}
-            className={className +  " grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[900px] mx-auto gap-10"}>
+            className={className +  " grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[1100px] mx-auto gap-10"}>
             {Products.map((value) => (
                 <Product btnColor={btnColor} titleColor={titleColor} captionColor={captionColor} {...value} key={value.title}/>
             ))}

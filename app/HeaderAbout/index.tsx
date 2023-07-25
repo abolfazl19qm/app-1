@@ -24,7 +24,7 @@ export interface IHeaderAbout {
     refContainer?: React.Ref<HTMLDivElement>;
 }
 
-export const SectionAbout: VFC<IHeaderAbout> = ({
+export const HeaderAbout: VFC<IHeaderAbout> = ({
                                                    title = "Scelerisque maecenasagittis pharetranunc dane.",
                                                    titleColor = "#ca8f65",
                                                    bgColor = "",
@@ -32,7 +32,7 @@ export const SectionAbout: VFC<IHeaderAbout> = ({
                                                    className = ""
                                                }) => {
     return (
-        <section
+        <header
             style={{backgroundImage: `url(${data.background_image})`, backgroundColor: bgColor}}
             ref={refContainer}
             className={`w-full  overflow-hidden bg-top  bg-no-repeat h-[800px] xl:h-[1000px] relative ${className}`}>
@@ -53,6 +53,6 @@ export const SectionAbout: VFC<IHeaderAbout> = ({
                     <div></div>
                 </div>
             </div>
-        </section>
+        </header>
     )
 }
