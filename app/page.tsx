@@ -75,7 +75,6 @@ export default function Home() {
         <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={""}>
             <SiteHeaderWh/>
             <br/>
-
             <br/>
             <br/>
             <br/>

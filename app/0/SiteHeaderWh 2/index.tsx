@@ -99,6 +99,12 @@ export const SiteHeaderWh: VFC<ISiteHeaderWh> = ({
     // state (show: "right-0" , hide: "-right-[440px]") Sidebar components
     const [sideBarDisplay, setSideBarDisplay] = useState<string>("-right-[440px]")
 
+    // state (show: "right-0" , hide: "-left-[350px]") Phone Number components
+    const [PhoneNumberDisplay, setPhoneNumberDisplay] = useState<string>("right-0")
+
+    // state (show: "right-0" , hide: "-right-[350px]") inside Login form components
+    const [CodeDisplay, setCodeDisplay] = useState<string>("-right-[350px]")
+
     return (
         <div
             ref={refContainer}
@@ -186,68 +192,82 @@ export const SiteHeaderWh: VFC<ISiteHeaderWh> = ({
                             </button>
                             {/* login */}
                             {loginDisplay &&
-                                <div className={"absolute top-24 w-80 h-96 bg-[#2a2a2a] z-40"}>
-                                    <div className={"flex mt-6 justify-between px-5"}><p
-                                        className={"text-3xl text-[#ca8f65]"}>Login</p>
-                                        <button
-                                            // use setLoginDisplay for hide login components
-                                            onClick={() => setLoginDisplay(false)}
-                                            className={"text-zinc-500 hover:rotate-[360deg] hover:text-zinc-200 transition-transform duration-500"}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                 fill="currentColor" className="w-6 h-6">
-                                                <path fillRule="evenodd"
-                                                      d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                                                      clipRule="evenodd"/>
-                                            </svg>
+                                <div className={"absolute top-24 w-[350px] overflow-hidden h-72 bg-[#2a2a2a] z-40"}>
+                                    <div className={"relative w-full flex h-full"}>
+                                        <div className={`w-full  h-full absolute transition-all duration-700 ${CodeDisplay}`}>
+                                            <div className={"flex mt-6  justify-between px-5"}>
+                                                <p className={"text-3xl text-[#ca8f65]"}>Enter Code</p>
+                                                <button
+                                                    // use setLoginDisplay for hide login components and Reset
+                                                    onClick={() => {setLoginDisplay(false);setPhoneNumberDisplay("right-0"); setSideLoginDisplay("-right-[350px]")}}
+                                                    className={"text-zinc-500 hover:rotate-[360deg] hover:text-zinc-200 transition-transform duration-500"}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                         fill="currentColor" className="w-6 h-6">
+                                                        <path fillRule="evenodd"
+                                                              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                                                              clipRule="evenodd"/>
+                                                    </svg>
 
-                                        </button>
-                                    </div>
-                                    <div
-                                        className={" h-12 w-[90%] border-b-[2px] mt-6 border-zinc-500 hover:border-zinc-300 transition-all duration-500 mx-auto flex gap-x-1 items-center"}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                             className="w-7 mb-2 text-zinc-500 h-7">
-                                            <path fillRule="evenodd"
-                                                  d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
-                                                  clipRule="evenodd"/>
-                                        </svg>
-                                        <div className={"relative"}>
-                                            <input
-                                                type="text"
-                                                className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] text-xl  focus:text-sm text-white leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                                id="exampleFormControlInputHelper" placeholder="Username or Email"/>
-                                            <label htmlFor="exampleFormControlInputHelper"
-                                                   className="pointer-events-none absolute  left-3 -top-2 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Username
-                                                or Email</label>
+                                                </button>
+                                            </div>
+                                            <div className={"w-[60%] mt-10 mx-auto"}><input type="text"
+                                                                                            placeholder={"         Your Code"}
+                                                                                            className={"w-full text-zinc-500 h-12 bg-transparent outline-0 border-zinc-500 focus:border-zinc-50  border-b-[1px] text-xl placeholder-zinc-50"}/>
+                                            </div>
+                                            <button
+                                                className={"bg-[#ca8f65] text-zinc-900 mt-10 w-[90%] hover:bg-orange-200 mx-auto h-12  text-sm flex justify-center items-center"}>Login
+                                            </button>
+                                            <button
+                                                // use setSideLoginDisplay and setPhoneNumberDisplay  for show code components
+                                                onClick={() => {setPhoneNumberDisplay("right-0"); setCodeDisplay("-right-[350px]")}}
+                                                className={"text-zinc-500 hover:text-zinc-300 text-center text-sm w-full mt-5"}>Edit
+                                                Your Number
+                                            </button>
+                                        </div>
+                                        // ---------------------------------
+                                        <div className={`w-full h-full absolute transition-all duration-700 ${PhoneNumberDisplay}`}>
+                                            <div className={"flex mt-6  justify-between px-5"}><p
+                                                className={"text-3xl text-[#ca8f65]"}>Login</p>
+                                                <button
+                                                    // use setLoginDisplay for hide login components
+                                                    onClick={() => setLoginDisplay(false)}
+                                                    className={"text-zinc-500 hover:rotate-[360deg] hover:text-zinc-200 transition-transform duration-500"}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                         fill="currentColor" className="w-6 h-6">
+                                                        <path fillRule="evenodd"
+                                                              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                                                              clipRule="evenodd"/>
+                                                    </svg>
+
+                                                </button>
+                                            </div>
                                             <div
-                                                className="absolute w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"></div>
+                                                className={" h-12  w-[90%] border-b-[2px] mt-10 border-zinc-500 hover:border-zinc-300 transition-all duration-500 mx-auto flex gap-x-1 items-center"}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                     fill="currentColor" className="w-7 text-zinc-500 mb-2 h-7">
+                                                    <path fillRule="evenodd"
+                                                          d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                                          clipRule="evenodd"/>
+                                                </svg>
+
+                                                <div className={"relative"}>
+                                                    <input
+                                                        type="tel"
+                                                        className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] text-xl focus:text-sm  text-white leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                                        id="exampleFormControlInputHelper" placeholder="Phone Number"/>
+                                                    <label htmlFor="exampleFormControlInputHelper"
+                                                           className="pointer-events-none absolute  left-3 -top-2 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Phone
+                                                        Number</label>
+                                                    <div
+                                                        className="absolute w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200  dark:peer-focus:text-primary"></div>
+                                                </div>
+                                            </div>
+                                            <button
+                                                onClick={() => {setPhoneNumberDisplay("-left-[350px]"); setCodeDisplay("right-0")}}
+                                                className={"bg-[#ca8f65] text-zinc-900  w-[90%] hover:bg-orange-200 mx-auto h-12 mt-10 text-sm flex justify-center items-center"}>Next
+                                            </button>
                                         </div>
                                     </div>
-                                    <div
-                                        className={" h-12 w-[90%] border-b-[2px] mt-6 border-zinc-500 hover:border-zinc-300 transition-all duration-500 mx-auto flex gap-x-1 items-center"}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                             className="w-7 mb-2 text-zinc-500 h-7">
-                                            <path fillRule="evenodd"
-                                                  d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
-                                                  clipRule="evenodd"/>
-                                        </svg>
-                                        <div className={"relative"}>
-                                            <input
-                                                type="password"
-                                                className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] text-xl focus:text-sm  text-white leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                                id="exampleFormControlInputHelper" placeholder="Password"/>
-                                            <label htmlFor="exampleFormControlInputHelper"
-                                                   className="pointer-events-none absolute  left-3 -top-2 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Password</label>
-                                            <div
-                                                className="absolute w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"></div>
-                                        </div>
-                                    </div>
-                                    <div className={"flex gap-x-2 items-center h-16  w-[90%] mx-auto"}><input
-                                        type="checkbox"/><p className={"text-zinc-500  text-xl"}>Remember me</p></div>
-                                    <button
-                                        className={"bg-[#ca8f65] text-zinc-900  w-[90%] hover:bg-orange-200 mx-auto h-12 mt-3 text-sm flex justify-center items-center"}>Login
-                                    </button>
-                                    <p className={"text-zinc-500 cursor-pointer hover:text-zinc-200 text-center mt-2 text-[10px]"}>Lost
-                                        your password?</p>
                                 </div>}
                             {/* login */}
                         </div>
