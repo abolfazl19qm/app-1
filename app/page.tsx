@@ -74,7 +74,7 @@ const sectionSlider = {
 }
 export default function Home() {
     return (
-        <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={"max-w-[2000px]"}>
+        <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={"max-w-[2000px] mx-auto"}>
             <br/>
             <br/>
             <br/>

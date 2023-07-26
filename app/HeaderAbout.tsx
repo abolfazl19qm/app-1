@@ -46,9 +46,6 @@ export const HeaderAbout: VFC<IHeaderAbout> = ({
                     <div className={"col-span-3 lg:col-span-1 gap-y-8 flex justify-center flex-col items-center"}><h1
                         style={{color: titleColor}}
                         className={"xl:text-5xl lg:text-3xl text-2xl font-medium w-[70%] lg:w-full text-center "}>{title}</h1>
-                        <img className={""}
-                             src="https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-sep1.svg"
-                             alt="Logo"/>
                     </div>
                     <div></div>
                 </div>

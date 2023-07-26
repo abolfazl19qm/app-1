@@ -6,14 +6,14 @@ const data =
     {
         "Product_1": {
             "name": "Bourbon Blend",
-            "price": "2000$",
+            "price": 2000,
             "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
             "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
             "buttonText": "add",
             "product_code": "11101-Pc",
             "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
             "Capacity": ["100 Ml", "200 Ml"],
-            "Discount": "10%",
+            "Discount": 10,
             "CapacityTitle": "Capacity",
             "categoriesTitle": "Categories",
             "categories": ["none", "otherNone"],
@@ -21,7 +21,7 @@ const data =
         },
         "Product_2": {
             "name": "Bourbon Blend",
-            "price": "2000$",
+            "price": 2000,
             "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
             "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
             "buttonText": "add",
@@ -30,20 +30,20 @@ const data =
             "Capacity": ["100 Ml", "200 Ml"],
             "CapacityTitle": "Capacity",
             "categoriesTitle": "Categories",
-            "Discount": "10%",
+            "Discount": 10,
             "categories": ["none", "otherNone"],
             "categoriesLink": ["/", "/"],
         },
         "Product_3": {
             "name": "Bourbon Blend",
-            "price": "2000$",
+            "price": 2000,
             "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
             "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
             "buttonText": "add",
             "product_code": "11101-Pc",
             "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
             "Capacity": ["100 Ml", "200 Ml"],
-            "Discount": "10%",
+            "Discount": 10,
             "CapacityTitle": "Capacity",
             "categoriesTitle": "Categories",
             "categories": ["none", "otherNone"],
@@ -51,14 +51,14 @@ const data =
         },
         "Product_4": {
             "name": "Bourbon Blend",
-            "price": "2000$",
+            "price": 2000,
             "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
             "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
             "buttonText": "add",
             "product_code": "11101-Pc",
             "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
             "Capacity": ["100 Ml", "200 Ml"],
-            "Discount": "10%",
+            "Discount": 10,
             "CapacityTitle": "Capacity",
             "categoriesTitle": "Categories",
             "categories": ["none", "otherNone"],
@@ -66,14 +66,14 @@ const data =
         },
         "Product_5": {
             "name": "Bourbon Blend",
-            "price": "2000$",
+            "price": 2000,
             "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
             "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
             "buttonText": "add",
             "product_code": "11101-Pc",
             "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
             "Capacity": ["100 Ml", "200 Ml"],
-            "Discount": "10%",
+            "Discount": 10,
             "CapacityTitle": "Capacity",
             "categoriesTitle": "Categories",
             "categories": ["none", "otherNone"],
@@ -81,14 +81,14 @@ const data =
         },
         "Product_6": {
             "name": "Bourbon Blend",
-            "price": "2000$",
+            "price": 2000,
             "caption": "Phasellus ornare magna quis neque ut venenatis consequat. Morbi facilisis nunc, ac erat velit odio fermentum wisi, mollis lobortis. Maecenas in posuere dui. Morbi urna quis arcu.",
             "images": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1-600x600.webp",
             "buttonText": "add",
             "product_code": "11101-Pc",
             "slideImage": ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp", "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-product-pic1.webp"],
             "Capacity": ["100 Ml", "200 Ml"],
-            "Discount": "10%",
+            "Discount": 10,
             "CapacityTitle": "Capacity",
             "categoriesTitle": "Categories",
             "categories": ["none", "otherNone"],
@@ -231,9 +231,9 @@ export const SectionProduct: VFC<ISectionProduct> = ({
         <section
             ref={refContainer}
             className={className + " grid grid-cols-6 xl:w-[70%] relative overflow-hidden lg:w-[75%] md:w-[80%] w-[90%] xl:h-[1100px] mx-auto gap-10"}>
-            {Products.map((value) => (
+            {Products.map((value, index) => (
                 <Product btnColor={btnColor} titleColor={titleColor} captionColor={captionColor} {...value}
-                         key={value.title}/>
+                         key={value.title + index}/>
             ))}
         </section>)
 }

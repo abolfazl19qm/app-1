@@ -1,14 +1,9 @@
 import React, {VFC} from "react";
 
-const data = {
-    "background_image": 'https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-section-bg2.webp',
-    "Logo": "https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-about-pic1.svg"
-}
-
 /**
  * Create a responsive Header for About page
  * @param {string} title : title
- * @param {string} titleColor : Titles Color
+ * @param {string} titleColor : Title Color
  * @param {string} className : add class
  * @param {React.Ref<HTMLDivElement>} refContainer : ref
  * @param {string} bgColor : background color
@@ -17,14 +12,18 @@ const data = {
  */
 
 export interface IHeaderAbout {
+    logo: string[];
+    backgroundImage: string[];
     title: string;
     titleColor: string;
-    bgColor: string;
+    bgColor?: string;
     className?: string;
     refContainer?: React.Ref<HTMLDivElement>;
 }
 
 export const HeaderAbout: VFC<IHeaderAbout> = ({
+                                                   logo = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-about-pic1.svg"],
+                                                   backgroundImage = ['https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-section-bg2.webp'],
                                                    title = "Scelerisque maecenasagittis pharetranunc dane.",
                                                    titleColor = "#ca8f65",
                                                    bgColor = "",
@@ -33,7 +32,7 @@ export const HeaderAbout: VFC<IHeaderAbout> = ({
                                                }) => {
     return (
         <header
-            style={{backgroundImage: `url(${data.background_image})`, backgroundColor: bgColor}}
+            style={{backgroundImage: `url(${backgroundImage[0]})`, backgroundColor: bgColor}}
             ref={refContainer}
             className={`w-full  overflow-hidden bg-top  bg-no-repeat h-[800px] xl:h-[1000px] relative ${className}`}>
             <div
@@ -41,14 +40,11 @@ export const HeaderAbout: VFC<IHeaderAbout> = ({
                 <div className={"grid  h-72 mx-auto gap-4   grid-cols-3"}>
                     <div className={"col-span-3 lg:col-span-1 flex justify-center lg:justify-end items-center"}><img
                         className={"lg:w-96 w-60 h-60 lg:h-96"}
-                        src={data.Logo}
+                        src={logo[0]}
                         alt="Logo"/></div>
                     <div className={"col-span-3 lg:col-span-1 gap-y-8 flex justify-center flex-col items-center"}><h1
                         style={{color: titleColor}}
                         className={"xl:text-5xl lg:text-3xl text-2xl font-medium w-[70%] lg:w-full text-center "}>{title}</h1>
-                        <img className={""}
-                             src="https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-sep1.svg"
-                             alt="Logo"/>
                     </div>
                     <div></div>
                 </div>

@@ -44,11 +44,11 @@ export const SettingsSectionAbout = (): JSX.Element => {
             },
         }),
 
-        description1: createSettingSidebarTextarea({
-            id: "description1",
+        description: createSettingSidebarTextarea({
+            id: "description",
             label: translator("توضیحات"),
             className: "mt-7",
-            defaultValue: get.description1,
+            defaultValue: get.description,
             textStyle: get.textStyle,
             onChangeTextStyle(value: {
                 Bold: boolean;
@@ -58,26 +58,10 @@ export const SettingsSectionAbout = (): JSX.Element => {
                 set({textStyle: value});
             },
             onChangeText(val: string) {
-                set({description1: val});
+                set({description: val});
             },
         }),
-        description2: createSettingSidebarTextarea({
-            id: "description2",
-            label: translator("دیگر توضیحات"),
-            className: "mt-5",
-            defaultValue: get.description2,
-            textStyle: get.textStyle,
-            onChangeTextStyle(value: {
-                Bold: boolean;
-                Italic: boolean;
-                Justify: boolean;
-            }) {
-                set({textStyle: value});
-            },
-            onChangeText(val: string) {
-                set({description2: val});
-            },
-        }),
+
         descriptionColor: createSettingColorPalette({
             id: "descriptionColor",
             label: translator("رنگ متن "),

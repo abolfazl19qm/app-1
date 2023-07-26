@@ -1,6 +1,7 @@
 import {
     createSettingColorPalette,
-    createSettingSidebarTextarea
+    createSettingSidebarTextarea,
+    createSettingSidebarUploadImage
 } from "@components/sidebar/components/settings";
 import translator from "@translator";
 import UseChangeSetting from "hook/useChangeSetting";
@@ -11,6 +12,29 @@ import {HeaderAboutType} from "./type";
 export const SettingsHeader = (): JSX.Element => {
     const {set, get} = UseChangeSetting<IHeaderAbout>();
     const settingsHeader: HeaderAboutType = {
+        image: createSettingSidebarUploadImage({
+            id: "Image",
+            noImageUploadedLabel: translator("uploadImage.input"),
+            requiredImgNumber: 1,
+            maxImgNumber: 1,
+            defaultValue: get.image,
+            className: "mt-7",
+            onChange(image: string[]) {
+                set({image: image});
+            },
+        }),
+        logo: createSettingSidebarUploadImage({
+            id: "logo",
+            noImageUploadedLabel: translator("uploadImage.input"),
+            requiredImgNumber: 1,
+            maxImgNumber: 1,
+            defaultValue: get.logo,
+            className: "mt-7",
+            onChange(image: string[]) {
+                set({logo: image});
+            },
+        }),
+
         title: createSettingSidebarTextarea({
             id: "title",
             label: translator("عنوان"),

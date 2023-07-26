@@ -19,11 +19,11 @@ interface IProduct {
     image: string;
     bgColor: string;
     title: string;
-    price: string;
+    price: number;
     description: string;
     CapacityTitle: string;
     Capacity: string[];
-    Discount: string;
+    Discount: number;
     btnText: string;
     categoriesTitle: string;
     categories: string[];
@@ -87,7 +87,7 @@ export const Product: VFC<IProduct> = ({
                     </div>
                     <div className={"col-span-2 md:col-span-1 p-4"}>
                         <h1 style={{color: titleColor}} className={"mt-4 font-medium text-4xl "}>{title}</h1>
-                        <p style={{color: titleColor}} className={"mt-4 text-xl"}>{price}</p>
+                        <div style={{color: titleColor}} className={"mt-4 text-xl"}><p className={"line-through  text-[16px]"}>{price}$</p><p>{Math.floor((price * (100 - Discount)) / 100)}$</p></div>
                         <p style={{color: captionColor}} className={"mt-4 "}>{description}</p>
                         <div className={"lg:w-[50%] w-[75%]  mt-8 flex items-center justify-between h-2 lg:h-5"}>
                             <p style={{color: captionColor}} className={"text-xl "}>{CapacityTitle}</p>
@@ -160,7 +160,7 @@ export const Product: VFC<IProduct> = ({
                     </div>
                 </div>
                 <p style={{color: "white"}} className={"mt-5 text-xl "}>{title}</p>
-                <span style={{color: titleColor}} className={"mt-2 "}>{price}</span>
+                <span style={{color: titleColor}} className={"mt-2 text-xl"}><p className={"line-through  text-[16px]"}>{price}$</p><p>{Math.floor((price * (100 - Discount)) / 100)}$</p></span>
                 <span
                     className={"w-10 h-6 bg-[#ca8f65] text-white  absolute text-[12px] left-5 lg:top-5 top-1 flex justify-center items-center  rounded-[3px]"}>{Discount}</span>
                 <div

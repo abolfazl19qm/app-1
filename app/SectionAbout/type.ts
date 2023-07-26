@@ -9,8 +9,7 @@ export interface SectionAboutType {
     image: sidebarUploadImage;
     title: sidebarTextInput;
     titleColor: colorPalette;
-    description1: sidebarTextarea;
-    description2: sidebarTextarea;
+    description: sidebarTextarea;
     descriptionColor: colorPalette;
     bgColor: colorPalette;
 }

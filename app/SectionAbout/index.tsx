@@ -4,8 +4,7 @@ export interface ISectionAbout {
     image: string[]
     title: string;
     titleColor: string;
-    description1: string;
-    description2: string;
+    description: string;
     descriptionColor: string;
     bgColor: string;
     className?: string;
@@ -17,9 +16,8 @@ export interface ISectionAbout {
  * Create a responsive section
  * @param {string} title : The title
  * @param {string} titleColor : The Title color
- * @param {string} description1 : The Description 1
- * @param {string} description2 : The Description 2
- * @param {string} commentColor : The Descriptions color
+ * @param {string} description : The Description
+ * @param {string} descriptionColor : The Descriptions color
  * @param {string} className : add class
  * @param {React.Ref<HTMLDivElement>} refContainer : ref
  * @param {string} bgColor : background color
@@ -34,8 +32,7 @@ export const SectionAbout: VFC<ISectionAbout> = ({
                                                      bgColor = "",
                                                      image = ["https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-about-pic2.webp"],
                                                      title = "About us",
-                                                     description1 = "Convallis taciti netus aptent himenaeos proin at posuere eget tempus sollicitudin fringilla dictum duis etiam enim quisque pulvinar elementum semper imperdiet cursus praesent elementum dictum cursus amet ornare sagittis congue sed habitasse quis volutpat velit posuere bibendum dictum etiam facilisis convallis donec nisl vivamus cursus eget sapien dictum lectus ligula.",
-                                                     description2 = "Pharetra vestibulum vestibulum donec vitae ullamcorper elit est sit maecenas vulputate nisl turpis imperdiet urna malesuada lorem .",
+                                                     description = "Convallis taciti netus aptent himenaeos proin at posuere eget tempus sollicitudin fringilla dictum duis etiam enim posuere eget posuere eget tempus sollicitudin fringilla dictum duis etiam enim quisque pulvinar elementum semper i tempus sollicitudin fringilla dictum duis etiam enim quisque pulvinar elementum semper i quisque pulvinar elementum semper imperdiet cursus praesent elementum dictum cursus amet ornare sagittis congue sed habitasse quis volutpat velit posuere bibendum dictum etiam facilisis convallis donec nisl vivamus cursus eget sapien dictum lectus ligula.",
                                                      titleColor = "#ca8f65",
                                                      descriptionColor = "#8e8e8e",
 
@@ -52,16 +49,9 @@ export const SectionAbout: VFC<ISectionAbout> = ({
             <div className={" md:col-span-6 lg:col-span-5 col-span-12 h-full w-full "}>
                 <h1 style={{color: titleColor}}
                     className={" text-center mt-5 lg:mt-24 text-3xl lg:text-5xl"}>{title}</h1>
-                <div className={"w-full flex justify-center mt-5 lg:mt-10 "}><img
-                    src="https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-sep1.svg"
-                    alt="Logo"/></div>
+
                 <p style={{color: descriptionColor}}
-                   className={"mt-10  md:text-[16px] w-[90%] text-[10px] mx-auto text-center"}>{description1}</p>
-                <p style={{color: descriptionColor}}
-                   className={"mt-4  w-[90%] md:text-[16px] text-[10px] mx-auto text-center"}>{description2}</p>
-                <div className={"w-full flex justify-center mt-5 lg:mt-10 "}><img
-                    src="https://themes.muffingroup.com/be/whiskey2/wp-content/uploads/2021/12/whiskey2-home-pic1.svg"
-                    alt="Logo"/></div>
+                   className={"mt-16  md:text-[16px] w-[90%] text-[10px] mx-auto text-center"}>{description}</p>
             </div>
         </section>
     )
