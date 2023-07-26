@@ -21,8 +21,6 @@ interface IProduct {
     title: string;
     price: number;
     description: string;
-    CapacityTitle: string;
-    Capacity: string[];
     Discount: number;
     btnText: string;
     categoriesTitle: string;
@@ -41,8 +39,6 @@ export const Product: VFC<IProduct> = ({
                                            image,
                                            price,
                                            title,
-                                           Capacity,
-                                           CapacityTitle,
                                            Discount,
                                            description,
                                            bgColor,
@@ -89,17 +85,7 @@ export const Product: VFC<IProduct> = ({
                         <h1 style={{color: titleColor}} className={"mt-4 font-medium text-4xl "}>{title}</h1>
                         <div style={{color: titleColor}} className={"mt-4 text-xl"}><p className={"line-through  text-[16px]"}>{price}$</p><p>{Math.floor((price * (100 - Discount)) / 100)}$</p></div>
                         <p style={{color: captionColor}} className={"mt-4 "}>{description}</p>
-                        <div className={"lg:w-[50%] w-[75%]  mt-8 flex items-center justify-between h-2 lg:h-5"}>
-                            <p style={{color: captionColor}} className={"text-xl "}>{CapacityTitle}</p>
-                            <div className={"flex gap-x-1"}>
-                                {Capacity.map((value, index) => (
-                                    <button key={value + index}
-                                            className={"border-[1px] border-zinc-700 text-zinc-500 rounded-md flex justify-center text-[11px] lg:py-2  mg:px-3 px-1 py-0.5 items-center"}>{value}</button>
-                                ))}
-
-                            </div>
-                        </div>
-                        <div className={"gap-x-2  lg:w-[85%] w-[96%] flex mt-12"}>
+                        <div className={"gap-x-2  lg:w-[85%] w-[96%] flex mt-20"}>
                             <div
                                 className={"w-[35%] flex h-12 border-[1px] border-zinc-500  justify-around items-center "}>
                                 <button
