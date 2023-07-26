@@ -53,7 +53,7 @@ export const SectionInfo: VFC<ISectionInfo> = ({
     return (
         <div className={className} ref={refContainer} style={{backgroundColor: bgColor}}>
             <section
-                className={"h-[770px] w-[90%] md:w-[85%] lg:w-[75%] xl:w-[66%] bg-[#2a2a2a] my-[500px] md:my-10  mx-auto"}>
+                className={"h-[770px] lg:h-[800px] overflow-hidden w-[98%] md:w-[94%] lg:w-[90%] xl:w-[70%] bg-[#2a2a2a] my-[500px] md:my-10  mx-auto"}>
                 <header className={"lg:text-3xl mb-20 xl:text-4xl text-2xl text-center  font-medium text-[#ca8f65]"}>
                     <h1>{phoneNumber}</h1>
                     <h2 className={"mt-2"}>{email}</h2>
@@ -86,7 +86,7 @@ export const SectionInfo: VFC<ISectionInfo> = ({
                             </div>
 
                         </div>
-                        <p className={"text-[#8e8e8e] text-center md:text-left mt-14 text-sm"}>{nr1}</p><p
+                        <p className={"text-[#8e8e8e] text-center md:text-left mt-10 text-sm"}>{nr1}</p><p
                         className={"text-sm text-center md:text-left text-[#8e8e8e]"}>{nr2}</p>
                     </div>
                     <div className={"w-full relative md:w-[55%] xl:w-[50%] h-3/6 md:h-full mt-10 md:my-0"}><img
