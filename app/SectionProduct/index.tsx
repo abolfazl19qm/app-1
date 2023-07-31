@@ -87,9 +87,9 @@ const data =
 export interface ISectionProduct {
     btnText: string;
     btnColor: string;
-    bgColor: string;
     titleColor: string;
     captionColor: string;
+    bgColor: string;
     className?: string;
     refContainer?: React.Ref<HTMLDivElement>;
 

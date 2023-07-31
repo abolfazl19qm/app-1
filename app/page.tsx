@@ -9,6 +9,8 @@ import {SectionProduct} from "@/app/SectionProduct";
 import {SiteHeaderWh} from "@/app/none/none";
 import {SectionAbout} from "@/app/SectionAbout";
 import {HeaderAbout} from "@/app/HeaderAbout";
+import {SectionBlog} from "@/app/SectionBlog";
+import {SectionAbout2} from "@/app/SectionAbout2";
 
 
 
@@ -77,6 +79,10 @@ export default function Home() {
         <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={"max-w-[2000px] mx-auto"}>
             <br/>
             <br/>
+            <SectionAbout2/>
+            <br/>
+            <br/>
+            <SectionBlog/>
             <br/>
             <HeaderAbout/>
             <br/>
@@ -84,6 +90,7 @@ export default function Home() {
             <SectionAbout/>
             <br/>
             <br/>
+
             <br/>
             <SectionProduct/>
             <br/>
