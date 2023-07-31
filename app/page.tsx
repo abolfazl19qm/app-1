@@ -76,37 +76,39 @@ const sectionSlider = {
 }
 export default function Home() {
     return (
-        <div style={{backgroundColor: "rgb(40, 40, 40)"}} className={"max-w-[2000px] mx-auto"}>
+        <div style={{backgroundColor: "rgb(47,46,46)"}} className={"max-w-[2000px] mx-auto"}>
             <br/>
             <br/>
             <SectionAbout2/>
             <br/>
             <br/>
-            <SectionBlog/>
             <br/>
+            <SectionLogo {...sectionLogo} />
             <HeaderAbout/>
             <br/>
             <br/>
-            <SectionAbout/>
+            <SectionSlider {...sectionSlider} />
             <br/>
             <br/>
-
             <br/>
             <SectionProduct/>
             <br/>
             <br/>
             <br/>
-            <SectionLogo {...sectionLogo} />
-            <SectionSlider {...sectionSlider} />
+
+
             <SectionServices {...sectionProduct} />
             <SectionEvent {...sectionEvent}/>
             <SectionInfo/>
             <br/>
             <br/>
+
+            <SectionBlog/>
             <br/>
             <SectionComment/>
             <br/>
             <br/>
+            <SectionAbout/>
             <br/>
             <br/>
             <br/>
